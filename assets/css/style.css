@@ -305,7 +305,7 @@ a:hover {
     opacity: 1;
   }
   50% {
-    opacity: 0.5;
+    opacity: 05;
   }
 }
 
@@ -749,8 +749,12 @@ header {
 /* Experience Timeline */
 .experience-timeline {
   position: relative;
-  max-width: 800px;
+  max-width: var(--container-width);
   margin: 0 auto;
+  width: 100%;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+  box-sizing: border-box;
 }
 
 .experience-timeline::before {
@@ -766,17 +770,64 @@ header {
 
 .experience-item {
   position: relative;
-  padding: var(--spacing-4) 0;
+  padding: var(--spacing-6) 0;
   opacity: 0;
   transform: translateY(20px);
+  /* Will be animated via Intersection Observer */
+  /* Card-like styling for experience items */
+  background: var(--color-card-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-card-border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover effects */
+.experience-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Highlight most recent experience (first item) with accent marker */
+.experience-item:first-child::before {
+  background: var(--color-accent);
+  border: 2px solid var(--color-primary);
+  width: 20px;
+  height: 20px;
+}
+
+/* Also highlight the first item card */
+.experience-item:first-child {
+  border: 1px solid var(--color-primary);
+  box-shadow: var(--shadow-md);
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .experience-item {
+    transition: none;
+  }
+
+  .experience-item.is-visible {
+    transform: none;
+  }
+}
+
+/* Fade-in-up animation for when JS adds the animation class */
+.experience-item.animate {
   animation: fade-in-up 0.6s ease forwards;
 }
 
-.experience-item:nth-child(odd) {
+.experience-item:nth-child(odd).animate {
   animation-delay: calc(0.1s * var(--item-index, 1));
 }
 
-.experience-item:nth-child(even) {
+.experience-item:nth-child(even).animate {
   animation-delay: calc(0.1s * var(--item-index, 1));
 }
 
@@ -803,58 +854,68 @@ header {
 }
 
 .experience-content {
-  width: calc(50% - 24px);
+  width: calc(50% - var(--spacing-6));
   padding: var(--spacing-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  align-items: center; /* Center all content horizontally */
 }
 
-.experience-content-left {
-  float: left;
-  clear: both;
+/* Position content based on item order for alternating layout */
+.experience-item:nth-child(odd) .experience-content {
+  margin-right: auto; /* Push content to left side */
 }
 
-.experience-content-right {
-  float: right;
-  clear: both;
+.experience-item:nth-child(even) .experience-content {
+  margin-left: auto;  /* Push content to right side */
 }
 
-.experience-date {
-  display: inline-block;
+/* Ensure header content is left-aligned (default for readability) */
+.experience-header {
+  width: 100%;
+  text-align: left;
+}
+
+.experience-company,
+.experience-position {
+  text-align: inherit;
+}
+
+.experience-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+  margin-block: var(--spacing-2);
+}
+
+.experience-period {
   background-color: var(--color-primary);
   color: white;
-  padding: var(--spacing-1) var(--spacing-2);
+  padding: var(--spacing-05) var(--spacing-1);
   border-radius: var(--radius-full);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
-  margin-bottom: var(--spacing-2);
-}
-
-.experience-company {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-bold);
-  margin-bottom: var(--spacing-1);
-}
-
-.experience-position {
-  font-size: var(--font-size-base);
-  color: var(--color-muted);
-  margin-bottom: var(--spacing-2);
+  white-space: nowrap;
 }
 
 .experience-location {
   font-size: var(--font-size-sm);
   color: var(--color-muted);
-  margin-bottom: var(--spacing-2);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-05);
 }
 
 .experience-description {
   font-size: var(--font-size-base);
   line-height: 1.6;
-  margin-bottom: var(--spacing-3);
   color: var(--color-text);
+  margin-bottom: var(--spacing-3);
 }
 
 .experience-responsibilities {
-  margin-bottom: var(--spacing-3);
+  margin-block: var(--spacing-3);
 }
 
 .experience-responsibilities ul {
@@ -866,6 +927,7 @@ header {
   position: relative;
   padding-left: var(--spacing-3);
   margin-bottom: var(--spacing-1);
+  list-style: none;
 }
 
 .experience-responsibilities li::before {
@@ -879,13 +941,14 @@ header {
   display: flex;
   flex-wrap: wrap;
   gap: var(--spacing-1);
-  margin-top: var(--spacing-2);
+  margin-block: var(--spacing-2);
+  align-self: flex-start;
 }
 
 .experience-stack .skill-badge {
   background: rgba(59, 130, 246, 0.2);
   color: #3b82f6;
-  padding: var(--spacing-0.5) var(--spacing-1.5);
+  padding: var(--spacing-05) var(--spacing-15);
   border-radius: var(--radius-full);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
@@ -897,6 +960,7 @@ header {
   color: white;
 }
 
+/* Mobile adjustments */
 @media (max-width: 767px) {
   .experience-timeline::before {
     left: 24px;
@@ -909,13 +973,49 @@ header {
   .experience-content {
     width: calc(100% - 48px);
     margin-left: 48px;
-    float: none !important;
+    margin-right: initial; /* Reset horizontal margins */
+    text-align: left;      /* Left-align text on mobile */
   }
 
-  .experience-content-left,
-  .experience-content-right {
-    float: none;
-    width: 100%;
+  /* Reset positioning overrides on mobile */
+  .experience-item:nth-child(odd) .experience-content,
+  .experience-item:nth-child(even) .experience-content {
+    margin-right: initial;
+    margin-left: initial;
+  }
+
+  /* Center specific elements within content on mobile if needed */
+  .experience-period,
+  .experience-location,
+  .experience-description,
+  .experience-responsibilities,
+  .experience-stack {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .experience-company {
+    justify-content: flex-start;
+  }
+
+  .experience-position {
+    margin-top: var(--spacing-05);
+  }
+
+  .experience-location {
+    margin-top: var(--spacing-05);
+  }
+
+  .experience-description {
+    margin-top: var(--spacing-05);
+  }
+
+  .experience-responsibilities {
+    margin-top: var(--spacing-05);
+  }
+
+  .experience-stack {
+    margin-top: var(--spacing-05);
   }
 }
 
@@ -997,7 +1097,7 @@ header {
 .project-technologies .project-tag {
   background: rgba(59, 130, 246, 0.2);
   color: #3b82f6;
-  padding: var(--spacing-0.5) var(--spacing-1.5);
+  padding: var(--spacing-05) var(--spacing-15);
   border-radius: var(--radius-sm);
   font-size: var(--font-size-xs);
 }
@@ -1011,7 +1111,7 @@ header {
 .project-link {
   flex: 1;
   text-align: center;
-  padding: var(--spacing-1.5);
+  padding: var(--spacing-15);
   background: var(--color-card-bg);
   border: 1px solid var(--color-card-border);
   border-radius: var(--radius-md);
@@ -1305,7 +1405,7 @@ header {
   color: var(--color-muted);
   background: var(--color-bg-alt);
   border-radius: var(--radius-full);
-  padding: var(--spacing-0.5) var(--spacing-1);
+  padding: var(--spacing-05) var(--spacing-1);
 }
 
 .radar-category-toggle {
@@ -1390,12 +1490,12 @@ header {
 .favorite-badge {
   display: flex;
   align-items: center;
-  gap: var(--spacing-0.5);
+  gap: var(--spacing-05);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
   color: var(--color-warning);
   background: rgba(245, 158, 11, 0.1);
-  padding: var(--spacing-0.5) var(--spacing-1);
+  padding: var(--spacing-05) var(--spacing-1);
   border-radius: var(--radius-full);
 }
 
@@ -1409,7 +1509,7 @@ header {
 
 .radar-tech-rating {
   display: flex;
-  gap: var(--spacing-0.5);
+  gap: var(--spacing-05);
   font-size: var(--font-size-sm);
 }
 
@@ -1430,7 +1530,7 @@ header {
 .radar-tech-level {
   display: inline-flex;
   align-items: center;
-  padding: var(--spacing-0.5) var(--spacing-1);
+  padding: var(--spacing-05) var(--spacing-1);
   border-radius: var(--radius-full);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);

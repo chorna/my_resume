@@ -287,8 +287,10 @@ class DataLoader {
             <h3 class="experience-company">${exp.company}</h3>
             <p class="experience-position">${exp.position}</p>
           </div>
-          <p class="experience-period">${startFormatted} – ${endFormatted}</p>
-          ${exp.location ? `<p class="experience-location">${exp.location}</p>` : ''}
+          <div class="experience-meta">
+            <p class="experience-period">${startFormatted} – ${endFormatted}</p>
+            ${exp.location ? `<p class="experience-location">${exp.location}</p>` : ''}
+          </div>
           ${exp.description ? `<p class="experience-description">${exp.description}</p>` : ''}
           ${responsibilitiesList}
           ${stackBadges}
@@ -296,6 +298,39 @@ class DataLoader {
       `;
 
       timeline.appendChild(item);
+    });
+
+    // Setup intersection observer for fade-in animations
+    this.initExperienceObserver();
+  }
+
+  /**
+   * Initialize intersection observer for experience items
+   */
+  initExperienceObserver() {
+    const items = document.querySelectorAll('.experience-item');
+    if (!items.length) return;
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+          // Unobserve after animation triggers
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    items.forEach((item, index) => {
+      // Set custom property for staggered delay
+      item.style.setProperty('--item-index', index + 1);
+      observer.observe(item);
     });
   }
 
