@@ -15,7 +15,7 @@ class App {
       this.themeManager.init();
 
       // Initialize animations
-      this.animals.init(); // Note: there's a typo here, should be this.animations.init()
+      this.animations.init();
 
       // Set current year in footer
       this.setCurrentYear();

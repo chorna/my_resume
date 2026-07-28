@@ -1,7 +1,7 @@
 {
-  "name": "Your Name",
+  "name": "Christian Horna",
   "title": "Software Engineer",
-  "location": "City, Country",
+  "location": "Lima, Perú",
   "email": "your.email@example.com",
   "linkedin": "https://linkedin.com/in/yourprofile",
   "github": "https://github.com/yourusername",
@@ -119,7 +119,7 @@
     {
       "name": "LinkedIn",
       "url": "https://linkedin.com/in/yourprofile",
-      "icon": "linkedincon": "linkedin"
+      "icon": "linkedin"
     },
     {
       "name": "GitHub",

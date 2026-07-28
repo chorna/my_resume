@@ -231,7 +231,9 @@ class DataLoader {
           🎓
         </div>
         <h3 class="education-title">${edu.institution}</h3>
-        <p class="education-degree">${edu.degree}${edu.fieldOfStudy ? `, ${edu.fieldOfStudy}`}</p>
+        <p class="education-degree">
+          ${edu.degree}${edu.fieldOfStudy ? `, ${edu.fieldOfStudy}` : ''}
+        </p>
         <p class="education-period">${edu.startDate} – ${edu.endDate}</p>
         ${edu.description ? `<p class="education-description">${edu.description}</p>` : ''}
       `;
