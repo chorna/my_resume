@@ -1,0 +1,130 @@
+{
+  "name": "Your Name",
+  "title": "Software Engineer",
+  "location": "City, Country",
+  "email": "your.email@example.com",
+  "linkedin": "https://linkedin.com/in/yourprofile",
+  "github": "https://github.com/yourusername",
+  "website": "https://yourwebsite.com",
+  "photo": "assets/images/photo.jpg",
+  "bio": "Short bio about yourself and your professional focus.",
+  "experience": [
+    {
+      "company": "Company Name",
+      "position": "Job Title",
+      "location": "City, Country",
+      "startDate": "YYYY-MM",
+      "endDate": "YYYY-MM or Present",
+      "description": "Brief description of your role and responsibilities.",
+      "highlights": [
+        "Achievement or responsibility 1",
+        "Achievement or responsibility 2"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University Name",
+      "degree": "Degree Name",
+      "field": "Field of Study",
+      "location": "City, Country",
+      "startDate": "YYYY-MM",
+      "endDate": "YYYY-MM",
+      "description": "Brief description of your education."
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Certification Name",
+      "issuer": "Issuing Organization",
+      "date": "YYYY-MM",
+      "credentialId": "Credential ID (if applicable)",
+      "url": "https://example.com/credential"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Programming Languages",
+      "items": ["JavaScript", "Python", "Java", "C++"]
+    },
+    {
+      "category": "Frontend Development",
+      "items": ["HTML5", "CSS3", "React", "Vue"]
+    },
+    {
+      "category": "Backend Development",
+      "items": ["Node.js", "Python/Django", "SQL"]
+    },
+    {
+      "category": "Tools & Technologies",
+      "items": ["Git", "Docker", "AWS", "Linux"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "proficiency": "Native"
+    },
+    {
+      "language": "Spanish",
+      "proficiency": "Intermediate"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Project Name",
+      "description": "Brief description of the project.",
+      "technologies": ["Tech1", "Tech2", "Tech3"],
+      "githubUrl": "https://github.com/yourusername/project",
+      "liveUrl": "https://yourproject.com",
+      "image": "assets/images/project1.jpg",
+      "highlights": [
+        "Feature or achievement 1",
+        "Feature or achievement 2"
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Award Name",
+      "issuer": "Issuing Organization",
+      "date": "YYYY-MM",
+      "description": "Brief description of the award."
+    }
+  ],
+  "publications": [
+    {
+      "title": "Publication Title",
+      "authors": ["Author1", "Author2"],
+      "publication": "Journal or Conference Name",
+      "date": "YYYY-MM",
+      "url": "https://example.com/publication"
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Testimonial Person",
+      "position": "Their Position",
+      "company": "Their Company",
+      "quote": "What they said about you.",
+      "image": "assets/images/testimonial1.jpg"
+    }
+  ],
+  "socialNetworks": [
+    {
+      "name": "Twitter",
+      "url": "https://twitter.com/yourusername",
+      "icon": "twitter"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://linkedin.com/in/yourprofile",
+      "icon": "linkedincon": "linkedin"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.com/yourusername",
+      "icon": "github"
+    }
+  ]
+}
