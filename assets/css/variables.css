@@ -1,6 +1,7 @@
 :root {
   /* Color Palette - Inspired by Stripe, Linear, Vercel */
   --color-bg: #f8fafc; /* Light gray */
+  --color-bg-alt: #f1f5f9; /* Slate-50 */
   --color-text: #1e293b; /* Dark blue */
   --color-muted: #64748b; /* Slate gray */
   --color-card-bg: #ffffff;
@@ -11,6 +12,8 @@
   --color-accent: #34d399; /* Mint */
   --color-danger: #ef4444; /* Red */
   --color-warning: #f59e0b; /* Amber */
+  --color-success: #10b981; /* Green */
+  --color-error: #ef4444; /* Red (same as danger) */
 
   /* Gradient */
   --gradient-primary: linear-gradient(135deg, #3b82f6, #10b981);
@@ -102,6 +105,7 @@
 /* Dark Theme (when .dark-theme class is applied to html) */
 .dark-theme {
   --color-bg: #0f172a; /* Navy */
+  --color-bg-alt: #020617; /* Even darker for alternating sections */
   --color-text: #f9fafb; /* Off-white */
   --color-muted: #94a3b8; /* Light slate */
   --color-card-bg: #1e293b; /* Dark slate */
@@ -109,4 +113,9 @@
   --color-primary: #60a5fa; /* Light blue */
   --color-primary-hover: #3b82f6;
   --color-accent: #34d399; /* Mint */
+  --color-danger: #ef4444; /* Red */
+  --color-warning: #f59e0b; /* Amber */
+  --color-success: #10b981; /* Green */
+  /* In dark theme, we keep the same semantic colors */
+  --color-error: #ef4444; /* Red (same as danger) */
 }

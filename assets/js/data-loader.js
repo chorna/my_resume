@@ -201,7 +201,6 @@ class DataLoader {
   async init() {
     await this.loadProfile();
     this.populateAllSections();
-    this.setupFormHandling();
   }
 
   /**
@@ -212,14 +211,13 @@ class DataLoader {
     this.populateAbout();
     this.populateExperience();
     this.populateEducation();
-    this.populateSkills();
     this.populateProjects();
     this.populateCertifications();
     this.populateLanguages();
     this.populateDeveloperDashboard();
     this.populateTechRadar();
     this.populateContact();
-    // Testimonials section removed as per new schema
+    // Testimonials and Skills sections removed as per new schema
   }
 
   /**
@@ -228,11 +226,18 @@ class DataLoader {
   populateHero() {
     const { name, headline, summary, photo } = this.profileData;
 
-    document.getElementById('hero-name').textContent = name;
-    document.getElementById('hero-title').textContent = headline;
-    document.getElementById('hero-bio').textContent = summary;
-    document.getElementById('hero-image').src = photo || 'assets/images/placeholder.jpg';
-    document.getElementById('hero-image').alt = `${name} photo`;
+    const heroName = document.querySelector('.hero-title');
+    const heroTitle = document.querySelector('.hero-tagline');
+    const heroBio = document.querySelector('.hero-description');
+    const heroImage = document.querySelector('.hero-image img');
+
+    if (heroName) heroName.textContent = name;
+    if (heroTitle) heroTitle.textContent = headline;
+    if (heroBio) heroBio.textContent = summary;
+    if (heroImage) {
+      heroImage.src = photo || 'assets/images/placeholder.jpg';
+      heroImage.alt = `${name} photo`;
+    }
   }
 
   /**
@@ -241,15 +246,18 @@ class DataLoader {
   populateAbout() {
     const { name, about } = this.profileData;
 
-    document.getElementById('about-name').textContent = name;
-    document.getElementById('about-bio').textContent = about;
+    const aboutName = document.querySelector('#about .about-text h2');
+    const aboutBio = document.querySelector('#about .about-description');
+
+    if (aboutName) aboutName.textContent = name;
+    if (aboutBio) aboutBio.textContent = about;
   }
 
   /**
    * Populate experience section
    */
   populateExperience() {
-    const timeline = document.getElementById('experience-timeline');
+    const timeline = document.querySelector('#experience .experience-timeline');
     if (!timeline) return;
 
     timeline.innerHTML = '';
@@ -295,7 +303,7 @@ class DataLoader {
    * Populate education section
    */
   populateEducation() {
-    const grid = document.getElementById('education-grid');
+    const grid = document.querySelector('#education .education-grid');
     if (!grid) return;
 
     grid.innerHTML = '';
@@ -319,37 +327,10 @@ class DataLoader {
   }
 
   /**
-   * Populate skills section
-   * Now a compact overview featuring featuredSkills
-   */
-  populateSkills() {
-    const skillsContainer = document.getElementById('skills-container');
-    if (!skillsContainer) return;
-
-    skillsContainer.innerHTML = '';
-
-    // Featured skills as compact overview
-    if (this.profileData.featuredSkills && this.profileData.featuredSkills.length > 0) {
-      const featuredCategory = document.createElement('div');
-      featuredCategory.className = 'skills-category';
-
-      featuredCategory.innerHTML = `
-        <h3 class="skills-category-title">Featured Skills</h3>
-        <div class="skills-list">
-          ${this.profileData.featuredSkills.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
-        </div>
-        <p class="skills-note">For detailed expertise, see the Tech Radar section.</p>
-      `;
-
-      skillsContainer.appendChild(featuredCategory);
-    }
-  }
-
-  /**
    * Populate projects section
    */
   populateProjects() {
-    const grid = document.getElementById('projects-grid');
+    const grid = document.querySelector('#projects .projects-grid');
     if (!grid) return;
 
     grid.innerHTML = '';
@@ -390,7 +371,7 @@ class DataLoader {
    * Populate certifications section
    */
   populateCertifications() {
-    const grid = document.getElementById('certifications-grid');
+    const grid = document.querySelector('#certifications .certifications-grid');
     if (!grid) return;
 
     grid.innerHTML = '';
@@ -418,7 +399,7 @@ class DataLoader {
    * Populate languages section
    */
   populateLanguages() {
-    const list = document.getElementById('languages-list');
+    const list = document.querySelector('#languages .languages-list');
     if (!list) return;
 
     list.innerHTML = '';
@@ -456,7 +437,7 @@ class DataLoader {
    * Populate Developer Dashboard section
    */
   populateDeveloperDashboard() {
-    const dashboardContainer = document.getElementById('developer-dashboard');
+    const dashboardContainer = document.querySelector('#developer-dashboard');
     if (!dashboardContainer) return;
 
     const { experienceYears, currentRole, currentCompany, location, workMode, summary, focusAreas, highlights } = this.profileData.developerDashboard;
@@ -565,7 +546,7 @@ class DataLoader {
    * Populate Tech Radar section
    */
   populateTechRadar() {
-    const radarContainer = document.getElementById('tech-radar');
+    const radarContainer = document.querySelector('#tech-radar');
     if (!radarContainer) return;
 
     const techRadar = this.profileData.techRadar;
@@ -655,7 +636,7 @@ class DataLoader {
    */
   populateContact() {
     // Contact info
-    const contactInfo = document.getElementById('contact-info');
+    const contactInfo = document.querySelector('#contact .contact-links');
     if (contactInfo) {
       const { email, phone, linkedin, github, website, location } = this.profileData;
 
@@ -687,37 +668,13 @@ class DataLoader {
       `;
     }
 
-    // Contact form
+    // Contact form - removed as per new design
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
-      // Form will be handled by setupFormHandling
+      contactForm.innerHTML = ''; // Clear form if it exists
     }
   }
-
-  /**
-   * Setup form handling
-   */
-  setupFormHandling() {
-    const form = document.getElementById('contact-form');
-    if (!form) return;
-
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      // Get form data
-      const formData = new FormData(form);
-      const data = Object.fromEntries(formData);
-
-      // Here you would typically send the data to a backend service
-      // For static site, we'll just show a success message
-      alert('Thank you for your message! I will get back to you soon.');
-
-      // Reset form
-      form.reset();
-    });
-  }
 }
-
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   const loader = new DataLoader();

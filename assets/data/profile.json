@@ -301,20 +301,7 @@
     }
   ],
 
-  "projects": [
-    {
-      "name": "Project Name",
-      "description": "Brief description of the project.",
-      "technologies": ["Tech1", "Tech2", "Tech3"],
-      "githubUrl": "https://github.com/yourusername/project",
-      "liveUrl": "https://yourproject.com",
-      "image": "assets/images/project1.jpg",
-      "highlights": [
-        "Feature or achievement 1",
-        "Feature or achievement 2"
-      ]
-    }
-  ],
+  "projects": [],
 
   "interests": [
     "Artificial Intelligence",
