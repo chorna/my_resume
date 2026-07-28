@@ -459,7 +459,7 @@ class DataLoader {
     }
 
     // Contact form
-    const contactForm = document.getElementByid('contact-form');
+    const contactForm = document.getElementById('contact-form');
     if (contactForm) {
       // Form will be handled by setupFormHandling
     }
