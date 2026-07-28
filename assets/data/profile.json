@@ -31,7 +31,7 @@
       "location": "Perú",
       "startDate": "2025-08",
       "endDate": null,
-      "description": "Desarrollo y mantenimiento de APIs REST para una plataforma educativa, enfocándome en rendimiento, seguridad, integraciones y procesos backend escalables.",
+      "description": "Desarrollo y mantenimiento de APIs REST para una plataforma de bienestar, enfocándome en rendimiento, seguridad, integraciones y procesos backend escalables.",
       "responsibilities": [
         "Desarrollé y mantuve APIs REST utilizando Django y Django REST Framework.",
         "Implementé pruebas unitarias y de integración para mejorar la calidad del software y reducir incidencias en producción.",

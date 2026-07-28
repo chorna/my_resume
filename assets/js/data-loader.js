@@ -477,104 +477,187 @@ class DataLoader {
 
     const { experienceYears, currentRole, currentCompany, location, workMode, summary, focusAreas, highlights } = this.profileData.developerDashboard;
 
-    // Format summary stats
-    const statsHTML = `
-      <div class="dashboard-stats">
-        <div class="stat-card">
-          <div class="stat-icon">💼</div>
-          <div class="stat-content">
-            <h3 class="stat-value">${experienceYears}+</h3>
-            <p class="stat-label">Experience Years</p>
-          </div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-icon">💼</div>
-          <div class="stat-content">
-            <h3 class="stat-value">${currentRole}</h3>
-            <p class="stat-label">Current Role</p>
-          </div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-icon">🏢</div>
-          <div class="stat-content">
-            <h3 class="stat-value">${currentCompany}</h3>
-            <p class="stat-label">Current Company</p>
-          </div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-icon">☁️</div>
-          <div class="stat-content">
-            <h3 class="stat-value">${summary.cloudProvider}</h3>
-            <p class="stat-label">Cloud Provider</p>
-          </div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-icon">💻</div>
-          <div class="stat-content">
-            <h3 class="stat-value">${summary.mainLanguage}</h3>
-            <p class="stat-label">Main Language</p>
-          </div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-icon">🔌</div>
-          <div class="stat-content">
-            <h3 class="stat-value">${summary.backendProjects}</h3>
-            <p class="stat-label">Backend Projects</p>
-          </div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-icon">🌐</div>
-          <div class="stat-content">
-            <h3 class="stat-value">${summary.restApis}</h3>
-            <p class="stat-label">REST APIs</p>
-          </div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-icon">🎯</div>
-          <div class="stat-content">
-            <h3 class="stat-value">${summary.specialization}</h3>
-            <p class="stat-label">Specialization</p>
-          </div>
-        </div>
-      </div>
-    `;
-
-    // Focus areas
-    const focusAreasHTML = focusAreas && focusAreas.length > 0 ?
-      `<div class="dashboard-focus">
-        <h3 class="dashboard-section-title">Focus Areas</h3>
-        <div class="focus-areas-grid">
-          ${focusAreas.map(area => `
-            <div class="focus-area-card">
-              <div class="focus-area-icon">${this.getIconHtml(area.icon)}</div>
-              <h4 class="focus-area-name">${area.name}</h4>
-            </div>
-          `).join('')}
-        </div>
-      </div>` : '';
-
-    // Highlights
-    const highlightsHTML = highlights && highlights.length > 0 ?
-      `<div class="dashboard-highlights">
-        <h3 class="dashboard-section-title">Highlights</h3>
-        <div class="highlights-grid">
-          ${highlights.map(highlight => `
-            <div class="highlight-card">
-              <h4 class="highlight-title">${highlight.title}</h4>
-              <p class="highlight-description">${highlight.description}</p>
-            </div>
-          `).join('')}
-        </div>
-      </div>` : '';
-
+    // Create dashboard structure
     dashboardContainer.innerHTML = `
       <div class="dashboard-header">
         <h2 class="dashboard-title">Developer Dashboard</h2>
       </div>
-      ${statsHTML}
-      ${focusAreasHTML}
-      ${highlightsHTML}
+      <div class="dashboard-content"></div>
+      <div class="dashboard-focus">
+        <h3 class="dashboard-section-title">Focus Areas</h3>
+        <div class="focus-areas-grid"></div>
+      </div>
+      <div class="dashboard-highlights">
+        <h3 class="dashboard-section-title">Highlights</h3>
+        <div class="highlights-grid"></div>
+      </div>
     `;
+
+    // Get references to containers
+    const statsContainer = dashboardContainer.querySelector('.dashboard-content');
+    const focusAreasContainer = dashboardContainer.querySelector('.focus-areas-grid');
+    const highlightsContainer = dashboardContainer.querySelector('.highlights-grid');
+
+    // Create and populate stats
+    this.createStats(statsContainer, experienceYears, currentRole, currentCompany, location, workMode, summary);
+
+    // Create and populate focus areas
+    this.createFocusAreas(focusAreasContainer, focusAreas);
+
+    // Create and populate highlights
+    this.createHighlights(highlightsContainer, highlights);
+
+    // Trigger animation on scroll
+    this.animateDashboardItems();
+  }
+
+  /**
+   * Create and populate stats cards
+   */
+  createStats(container, experienceYears, currentRole, currentCompany, location, workMode, summary) {
+    const stats = [
+      {
+        value: `${experienceYears}+`,
+        label: 'Experience Years',
+        icon: 'fas fa-briefcase',
+        highlight: true
+      },
+      {
+        value: currentRole,
+        label: 'Current Role',
+        icon: 'fas fa-user-tie',
+        highlight: true
+      },
+      {
+        value: currentCompany,
+        label: 'Current Company',
+        icon: 'fas fa-building',
+        highlight: true
+      },
+      {
+        value: location,
+        label: 'Location',
+        icon: 'fas fa-map-marker-alt'
+      },
+      {
+        value: workMode,
+        label: 'Work Mode',
+        icon: 'fas fa-network-wired'
+      },
+      {
+        value: summary.cloudProvider,
+        label: 'Cloud Provider',
+        icon: 'fas fa-cloud'
+      },
+      {
+        value: summary.mainLanguage,
+        label: 'Main Language',
+        icon: 'fas fa-laptop-code'
+      },
+      {
+        value: summary.backendProjects,
+        label: 'Backend Projects',
+        icon: 'fas fa-code'
+      },
+      {
+        value: summary.restApis,
+        label: 'REST APIs',
+        icon: 'fas fa-globe'
+      },
+      {
+        value: summary.specialization,
+        label: 'Specialization',
+        icon: 'fas fa-bullseye'
+      }
+    ];
+
+    stats.forEach((stat, index) => {
+      const card = document.createElement('div');
+      card.className = `stat-card ${stat.highlight ? 'highlight' : ''} animate-fade-in`;
+      card.style.setProperty('--item-index', index + 1);
+
+      card.innerHTML = `
+        <div class="stat-icon">
+          <i class="${stat.icon}"></i>
+        </div>
+        <div class="stat-content">
+          <h3 class="stat-value">${stat.value}</h3>
+          <p class="stat-label">${stat.label}</p>
+        </div>
+      `;
+
+      container.appendChild(card);
+    });
+  }
+
+  /**
+   * Create and populate focus areas cards
+   */
+  createFocusAreas(container, focusAreas) {
+    if (!focusAreas || focusAreas.length === 0) return;
+
+    focusAreas.forEach((area, index) => {
+      const card = document.createElement('div');
+      card.className = `focus-area-card animate-fade-in`;
+      card.style.setProperty('--item-index', index + 1);
+
+      card.innerHTML = `
+        <div class="focus-area-icon">
+          ${this.getIconHtml(area.icon)}
+        </div>
+        <h4 class="focus-area-name">${area.name}</h4>
+      `;
+
+      container.appendChild(card);
+    });
+  }
+
+  /**
+   * Create and populate highlights cards
+   */
+  createHighlights(container, highlights) {
+    if (!highlights || highlights.length === 0) return;
+
+    highlights.forEach((highlight, index) => {
+      const card = document.createElement('div');
+      card.className = `highlight-card animate-fade-in`;
+      card.style.setProperty('--item-index', index + 1);
+
+      card.innerHTML = `
+        <h4 class="highlight-title">${highlight.title}</h4>
+        <p class="highlight-description">${highlight.description}</p>
+      `;
+
+      container.appendChild(card);
+    });
+  }
+
+  /**
+   * Animate dashboard items on scroll
+   */
+  animateDashboardItems() {
+    const items = document.querySelectorAll('#developer-dashboard .animate-fade-in');
+    if (!items.length) return;
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in-active');
+          // Unobserve after animation triggers
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    items.forEach(item => {
+      observer.observe(item);
+    });
   }
 
   /**

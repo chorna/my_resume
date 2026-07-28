@@ -217,7 +217,7 @@
 .project-tag {
   background-color: var(--color-primary);
   color: white;
-  padding: var(--spacing-0-5) var(--spacing-1-5);
+  padding: var(--spacing-05) var(--spacing-15);
   border-radius: var(--radius-sm);
   font-size: var(--font-size-xs);
 }
