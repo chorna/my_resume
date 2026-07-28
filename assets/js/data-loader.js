@@ -623,7 +623,14 @@ class DataLoader {
       card.className = `highlight-card animate-fade-in`;
       card.style.setProperty('--item-index', index + 1);
 
+      // Get icon for this highlight
+      const iconName = this.getHighlightIconName(highlight.title);
+      const iconHtml = this.getIconHtml(iconName);
+
       card.innerHTML = `
+        <div class="highlight-icon">
+          ${iconHtml}
+        </div>
         <h4 class="highlight-title">${highlight.title}</h4>
         <p class="highlight-description">${highlight.description}</p>
       `;
@@ -768,6 +775,63 @@ class DataLoader {
       'default': 'fas fa-cog'
     };
     return `<i class="${iconMap[iconName] || iconMap.default}"></i>`;
+  }
+
+  /**
+   * Get icon name for a highlight title
+   * @param {string} title - The highlight title
+   * @returns {string} Icon name for the getIconHtml method
+   */
+  getHighlightIconName(title) {
+    // Convert to lowercase for matching
+    const lowerTitle = title.toLowerCase();
+
+    // Define mappings from title keywords to icon names
+    const iconMap = {
+      // Experience/years
+      'years': 'calendar',
+      'year': 'calendar',
+      '+': 'circle-plus',
+
+      // Technologies
+      'python': 'fab fa-python',
+      'django': 'fab fa-django',
+      'aws': 'fab fa-aws',
+      'java': 'fab fa-java',
+      'javascript': 'fab fa-js',
+      'js': 'fab fa-js',
+      'html': 'fab fa-html-5',
+      'css': 'fab fa-css3-alt',
+      'react': 'fab fa-react',
+      'node': 'fab fa-node-js',
+      'sql': 'fas fa-database',
+      'database': 'fas fa-database',
+      'api': 'fas fa-api',
+
+      // Cloud/DevOps
+      'cloud': 'fas fa-cloud',
+      'docker': 'fab fa-docker',
+      'kubernetes': 'fas fa-cone',
+
+      // Business/Process
+      'collaboration': 'fas fa-users',
+      'team': 'fas fa-users',
+      'leadership': 'fas fa-user-tie',
+      'management': 'fas fa-project-diagram',
+
+      // Default for unknown
+      'default': 'circle'
+    };
+
+    // Check for keyword matches
+    for (const [keyword, icon] of Object.entries(iconMap)) {
+      if (lowerTitle.includes(keyword)) {
+        return icon;
+      }
+    }
+
+    // Return default if no match found
+    return iconMap.default;
   }
 
   /**

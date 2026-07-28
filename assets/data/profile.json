@@ -353,8 +353,8 @@
         "Construction",
         "Healthcare"
       ],
-      "backendProjects": 20,
-      "restApis": 40,
+      "backendProjects": "20+",
+      "restApis": "40+",
       "cloudProvider": "AWS",
       "mainLanguage": "Python",
       "specialization": "Backend Architecture"
