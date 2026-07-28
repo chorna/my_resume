@@ -553,25 +553,30 @@ class DataLoader {
 
     let categoriesHTML = '';
 
-    techRadar.forEach(category => {
+    techRadar.forEach((category, index) => {
       const { category: catName, color, items } = category;
+      const itemCount = items && items.length > 0 ? items.length : 0;
+      const iconName = this.getCategoryIcon(catName);
 
       const itemsHTML = items && items.length > 0 ?
         `<div class="radar-items">
-          ${items.map(item => {
+          ${items.map((item, itemIndex) => {
             const { name, level, score, years, favorite } = item;
             const levelClass = this.getLevelClass(level);
             const favoriteClass = favorite ? 'favorite' : '';
             return `
-              <div class="radar-item ${favoriteClass}" style="border-left-color: ${color};">
-                <div class="radar-item-content">
-                  <h4 class="radar-item-name">${name}</h4>
-                  <div class="radar-item-meta">
-                    <span class="radar-item-level ${levelClass}">${level}</span>
-                    <span class="radar-item-years">${years} yrs</span>
+              <div class="radar-tech-item ${favoriteClass}">
+                <div class="radar-tech-content">
+                  <div class="radar-tech-header">
+                    <h4 class="radar-tech-name">${name}</h4>
+                    ${favorite ? '<span class="favorite-badge">⭐ Favorite</span>' : ''}
                   </div>
-                  <div class="radar-item-score">
-                    ${'★'.repeat(score)}${'☆'.repeat(5 - score)}
+                  <div class="radar-tech-details">
+                    <div class="radar-tech-rating">${'★'.repeat(score)}${'☆'.repeat(5 - score)}</div>
+                    <div class="radar-tech-meta">
+                      <span class="radar-tech-years">${years} yrs</span>
+                      <span class="radar-tech-level level-${this.getLevelClass(level).split('-')[1]}">${level}</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -580,9 +585,16 @@ class DataLoader {
         </div>` : '';
 
       categoriesHTML += `
-        <div class="radar-category">
-          <h3 class="radar-category-title" style="border-left: 4px solid ${color};">${catName}</h3>
-          ${itemsHTML}
+        <div class="radar-category-wrapper">
+          <button class="radar-category-header" aria-expanded="false" aria-controls="category-${index}">
+            <div class="radar-category-icon">${this.getIconHtml(iconName)}</div>
+            <h3 class="radar-category-title">${catName}</h3>
+            <span class="radar-category-count">${itemCount}</span>
+            <span class="radar-category-toggle">▼</span>
+          </button>
+          <div class="radar-category-content" id="category-${index}">
+            ${itemsHTML}
+          </div>
         </div>
       `;
     });
@@ -591,10 +603,32 @@ class DataLoader {
       <div class="radar-header">
         <h2 class="radar-title">Tech Radar</h2>
       </div>
-      <div class="radar-categories">
+      <div class="radar-accordion">
         ${categoriesHTML}
       </div>
     `;
+
+    // Add event listeners for accordion functionality
+    setTimeout(() => {
+      this.initAccordion();
+    }, 0);
+  }
+
+  /**
+   * Get icon class name for category
+   * @param {string} categoryName - Category name
+   * @returns {string} Icon class name
+   */
+  getCategoryIcon(categoryName) {
+    const iconMap = {
+      'Backend': 'server',
+      'Databases': 'database',
+      'Cloud & DevOps': 'cloud',
+      'Frontend': 'code',
+      'Testing': 'flask',
+      'Artificial Intelligence': 'brain'
+    };
+    return iconMap[categoryName] || 'cog';
   }
 
   /**
@@ -631,6 +665,42 @@ class DataLoader {
     return 'level-learning';
   }
 
+  /**
+   * Initialize accordion functionality for Tech Radar
+   */
+  initAccordion() {
+    const headers = document.querySelectorAll('.radar-category-header');
+
+    headers.forEach(header => {
+      header.addEventListener('click', () => {
+        const isOpen = header.getAttribute('aria-expanded') === 'true';
+
+        // Close all other sections
+        headers.forEach(h => {
+          h.setAttribute('aria-expanded', 'false');
+          const contentId = h.getAttribute('aria-controls');
+          const content = document.getElementById(contentId);
+          if (content) {
+            content.style.maxHeight = null;
+          }
+        });
+
+        // Toggle current section
+        header.setAttribute('aria-expanded', !isOpen);
+        const contentId = header.getAttribute('aria-controls');
+        const content = document.getElementById(contentId);
+        if (content) {
+          if (!isOpen) {
+            content.style.maxHeight = content.scrollHeight + 'px';
+          } else {
+            content.style.maxHeight = null;
+          }
+        }
+      });
+    });
+  }
+
+  
   /**
    * Populate contact section
    */
