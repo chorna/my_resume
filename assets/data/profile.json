@@ -1,75 +1,306 @@
 {
   "name": "Christian Horna",
-  "title": "Software Engineer",
-  "location": "Lima, Perú",
-  "email": "your.email@example.com",
-  "linkedin": "https://linkedin.com/in/yourprofile",
-  "github": "https://github.com/yourusername",
-  "website": "https://yourwebsite.com",
-  "photo": "assets/images/photo.jpg",
-  "bio": "Short bio about yourself and your professional focus.",
+  "headline": "Senior Python Backend Developer",
+  "title": "Senior Backend Engineer | Python & Django Specialist",
+  "location": "Lima, Perú (GMT-5)",
+  "photo": "assets/images/photo.png",
+  "email": "christian1020@gmail.com",
+  "phone": "+51 923421779",
+  "linkedin": "https://linkedin.com/in/christianhorna",
+  "github": "https://github.com/chorna",
+  "website": "https://chorna.github.io/my_resumen/",
+  "resume": "assets/files/christian-horna-cv.pdf",
+  "summary": "Ingeniero de Sistemas con más de 10 años de experiencia desarrollando aplicaciones web escalables y APIs para empresas de Latinoamérica, Estados Unidos y España. Especializado en Python, Django, Django REST Framework y PostgreSQL. Experiencia en arquitecturas backend desplegadas en AWS, optimización de consultas SQL, procesos asíncronos y desarrollo de plataformas SaaS.",
+  "about": "He participado en proyectos de recursos humanos, auditoría, manufactura, construcción y salud, liderando iniciativas de mejora continua, automatización y escalabilidad. Me apasionan la Inteligencia Artificial, los agentes autónomos, blockchain y el desarrollo de soluciones backend de alto rendimiento.",
+
+  "careerHighlights": [
+    "Más de 10 años de experiencia profesional.",
+    "Especialista en Python y Django.",
+    "Experiencia desarrollando plataformas SaaS.",
+    "Arquitecturas backend escalables sobre AWS.",
+    "Integración de pasarelas de pago y servicios externos.",
+    "Implementación de IA mediante OpenAI API.",
+    "Optimización de PostgreSQL y consultas SQL.",
+    "Automatización mediante Celery y Redis."
+  ],
+
   "experience": [
     {
-      "company": "Company Name",
-      "position": "Job Title",
-      "location": "City, Country",
-      "startDate": "YYYY-MM",
-      "endDate": "YYYY-MM or Present",
-      "description": "Brief description of your role and responsibilities.",
-      "highlights": [
-        "Achievement or responsibility 1",
-        "Achievement or responsibility 2"
+      "company": "QDS",
+      "position": "Senior Backend",
+      "location": "Perú",
+      "startDate": "2025-08",
+      "endDate": null,
+      "description": "Desarrollo y mantenimiento de APIs REST para plataforma educativa.",
+      "responsibilities": [
+        "Desarrollo de APIs REST con Django REST Framework.",
+        "Pruebas unitarias e integración.",
+        "Optimización de consultas SQL.",
+        "Integración con WhatsApp.",
+        "Procesos asíncronos con Celery.",
+        "Integración con Izipay.",
+        "Implementación de controles OWASP Top 10.",
+        "Despliegues sobre AWS."
+      ],
+      "stack": [
+        "Python",
+        "Django",
+        "DRF",
+        "MariaDB",
+        "Docker",
+        "Redis",
+        "Celery",
+        "AWS",
+        "SQS",
+        "S3",
+        "Git",
+        "Sentry"
+      ]
+    },
+    {
+      "company": "Clarity Wave",
+      "position": "Full Stack Developer",
+      "location": "Remoto",
+      "startDate": "2021-10",
+      "endDate": "2025-06",
+      "description": "Desarrollo de plataforma SaaS para gestión de talento humano.",
+      "responsibilities": [
+        "Desarrollo de funcionalidades usando OpenAI.",
+        "Optimización de PostgreSQL.",
+        "Implementación de Redis.",
+        "APIs REST.",
+        "Exportaciones masivas.",
+        "Celery.",
+        "Testing automatizado.",
+        "Deploy en AWS."
+      ],
+      "stack": [
+        "Python",
+        "Django",
+        "DRF",
+        "PostgreSQL",
+        "Redis",
+        "Celery",
+        "Vue.js",
+        "Docker",
+        "AWS",
+        "JavaScript",
+        "Playwright"
+      ]
+    },
+    {
+      "company": "Litho Laser",
+      "position": "Full Stack Developer",
+      "location": "Perú",
+      "startDate": "2015-12",
+      "endDate": "2021-09",
+      "description": "Desarrollo de soluciones ERP y comercio electrónico.",
+      "stack": [
+        "Python",
+        "Django",
+        "Odoo",
+        "Node.js",
+        "Express",
+        "MongoDB"
+      ]
+    },
+    {
+      "company": "vwplanner",
+      "position": "Full Stack Developer",
+      "location": "Perú",
+      "startDate": "2014-08",
+      "endDate": "2015-11",
+      "description": "Desarrollo de plataforma para gestión de proyectos de construcción.",
+      "stack": [
+        "Python",
+        "Django",
+        "PostgreSQL",
+        "JavaScript"
       ]
     }
   ],
+
   "education": [
     {
-      "institution": "University Name",
-      "degree": "Degree Name",
-      "field": "Field of Study",
-      "location": "City, Country",
-      "startDate": "YYYY-MM",
-      "endDate": "YYYY-MM",
-      "description": "Brief description of your education."
+      "institution": "Universidad César Vallejo",
+      "degree": "Ingeniería de Sistemas",
+      "location": "Chimbote, Perú",
+      "startYear": 2008,
+      "endYear": 2012
+    },
+    {
+      "institution": "Pontificia Universidad Católica del Perú",
+      "degree": "Ingeniería Electrónica",
+      "location": "Lima, Perú",
+      "startYear": 2003,
+      "endYear": 2005
     }
   ],
+
   "certifications": [
     {
-      "name": "Certification Name",
-      "issuer": "Issuing Organization",
-      "date": "YYYY-MM",
-      "credentialId": "Credential ID (if applicable)",
-      "url": "https://example.com/credential"
+      "name": "Curso Completo: LangChain, LangGraph y Agentes IA con Python",
+      "issuer": "Udemy",
+      "date": "2026-07",
+      "credentialId": "UC-5d5d3c1d-674c-47dc-8ff8-027b175e3802",
+      "url": "https://www.udemy.com/certificate/UC-5d5d3c1d-674c-47dc-8ff8-027b175e3802/"
+    },
+    {
+      "name": "Curso de Django REST Framework",
+      "issuer": "Platzi",
+      "date": "2024-12",
+      "credentialId": "80554354-d0cb-4678-9bb9-1066ad83bcc8",
+      "url": "https://platzi.com/p/chorna/curso/10728-course/diploma/detalle/"
+    },
+    {
+      "name": "Curso de Django",
+      "issuer": "Platzi",
+      "date": "2024-12",
+      "credentialId": "cb881395-778d-43a9-899c-cea7fd7035d0",
+      "url": "https://platzi.com/p/chorna/curso/9574-course/diploma/detalle/"
+    },
+    {
+      "name": "Curso de Unit Testing en Python",
+      "issuer": "Platzi",
+      "date": "2024-12",
+      "credentialId": "dfcf7911-6d36-4658-ab99-146d9e66a6e7",
+      "url": "https://platzi.com/p/chorna/curso/10662-course/diploma/detalle/"
+    },
+    {
+      "name": "Curso de Backend con Node.js: API REST con Express.js",
+      "issuer": "Platzi",
+      "date": "2022-08",
+      "credentialId": "2b2f6a53-bceb-47c9-b93e-3ec34b11f1f4",
+      "url": "https://platzi.com/p/chorna/curso/2485-course/diploma/detalle/"
+    },
+    {
+      "name": "Curso de Backend con Node.js: Base de Datos con PostgreSQL",
+      "issuer": "Platzi",
+      "date": "2022-08",
+      "credentialId": "b8e17f8e-6911-4a38-b0ef-3dc48d830c10",
+      "url": "https://platzi.com/p/chorna/curso/2507-course/diploma/detalle/"
+    },
+    {
+      "name": "Curso Práctico de AWS Cloud",
+      "issuer": "Platzi",
+      "date": "2021-09",
+      "credentialId": "391daf68-f0a3-447a-b3da-d3bcaa795359",
+      "url": "https://platzi.com/p/chorna/curso/1323-course/diploma/detalle/"
+    },
+    {
+      "name": "Curso de Node.js: Base de Datos con MongoDB y WebSockets",
+      "issuer": "Platzi",
+      "date": "2021-08",
+      "credentialId": "dd43de3f-63eb-4ee6-bf86-51c36095f2c6",
+      "url": "https://platzi.com/p/chorna/curso/1689-course/diploma/detalle/"
+    },
+    {
+      "name": "Curso Práctico de Regresión Lineal con Python",
+      "issuer": "Platzi",
+      "date": "2021-06",
+      "credentialId": "14f26641-3109-4ca0-95f0-65b965b01607",
+      "url": "https://platzi.com/p/chorna/curso/1766-course/diploma/detalle/"
+    },
+    {
+      "name": "Curso de Frontend Developer",
+      "issuer": "Platzi",
+      "date": "2021-04",
+      "credentialId": "ef68ee44-3ed8-478b-b19f-f87ba3ce8e6d",
+      "url": "https://platzi.com/p/chorna/curso/1640-course/diploma/detalle/"
+    },
+    {
+      "name": "Curso de Scrapy",
+      "issuer": "Platzi",
+      "date": "2021-02",
+      "credentialId": "bd63bd06-3d96-467e-90a4-9af28dbbfa9e",
+      "url": "https://platzi.com/p/chorna/curso/1909-course/diploma/detalle/"
+    },
+    {
+      "name": "Curso de Principios de Visualización de Datos para Business Intelligence",
+      "issuer": "Platzi",
+      "date": "2021-02",
+      "credentialId": "923c401b-967a-48cb-8af9-feb062235d76",
+      "url": "https://platzi.com/p/chorna/curso/2195-course/diploma/detalle/"
+    },
+    {
+      "name": "Curso de Introducción al Pensamiento Probabilístico",
+      "issuer": "Platzi",
+      "date": "2020-12",
+      "credentialId": "23281a68-5db7-4184-aa04-8e1faf6209c1",
+      "url": "https://platzi.com/p/chorna/curso/1841-course/diploma/detalle/"
     }
   ],
-  "skills": [
-    {
-      "category": "Programming Languages",
-      "items": ["JavaScript", "Python", "Java", "C++"]
-    },
-    {
-      "category": "Frontend Development",
-      "items": ["HTML5", "CSS3", "React", "Vue"]
-    },
-    {
-      "category": "Backend Development",
-      "items": ["Node.js", "Python/Django", "SQL"]
-    },
-    {
-      "category": "Tools & Technologies",
-      "items": ["Git", "Docker", "AWS", "Linux"]
-    }
+
+  "skills": {
+    "backend": [
+      "Python",
+      "Django",
+      "Django REST Framework",
+      "Celery",
+      "REST APIs"
+    ],
+    "databases": [
+      "PostgreSQL",
+      "MariaDB",
+      "MySQL",
+      "SQL Server",
+      "MongoDB"
+    ],
+    "frontend": [
+      "JavaScript",
+      "Vue.js",
+      "React.js"
+    ],
+    "cloud": [
+      "AWS",
+      "Docker",
+      "Redis",
+      "SQS",
+      "S3"
+    ],
+    "testing": [
+      "Pytest",
+      "Unit Testing",
+      "TDD",
+      "Playwright",
+      "Sentry"
+    ],
+    "methodologies": [
+      "Scrum",
+      "Kanban"
+    ],
+    "ai": [
+      "OpenAI API",
+      "GitHub Copilot",
+      "Prompt Engineering"
+    ]
+  },
+
+
+  "featuredSkills": [
+    "Python",
+    "Django",
+    "Django REST Framework",
+    "PostgreSQL",
+    "AWS",
+    "Docker",
+    "Celery",
+    "Redis",
+    "REST APIs",
+    "OpenAI API"
   ],
+
   "languages": [
     {
-      "language": "English",
-      "proficiency": "Native"
+      "name": "Español",
+      "level": "Nativo"
     },
     {
-      "language": "Spanish",
-      "proficiency": "Intermediate"
+      "name": "Inglés",
+      "level": "Intermedio"
     }
   ],
+
   "projects": [
     {
       "name": "Project Name",
@@ -84,32 +315,331 @@
       ]
     }
   ],
-  "awards": [
+
+  "interests": [
+    "Artificial Intelligence",
+    "LLMs",
+    "Autonomous AI Agents",
+    "Backend Architecture",
+    "Cloud Computing",
+    "Blockchain",
+    "Web3"
+  ],
+
+  "availability": {
+    "remote": true,
+    "relocation": true,
+    "freelance": true
+  },
+
+  "developerDashboard": {
+    "experienceYears": 11,
+    "currentRole": "Backend Specialist",
+    "currentCompany": "QDS",
+    "location": "Lima, Perú",
+    "workMode": "Remote / Hybrid",
+
+    "summary": {
+      "companies": 4,
+      "industries": [
+        "HR SaaS",
+        "Education",
+        "Manufacturing",
+        "Construction",
+        "Healthcare"
+      ],
+      "backendProjects": 20,
+      "restApis": 40,
+      "cloudProvider": "AWS",
+      "mainLanguage": "Python",
+      "specialization": "Backend Architecture"
+    },
+
+    "focusAreas": [
+      {
+        "name": "Backend Development",
+        "icon": "server"
+      },
+      {
+        "name": "System Architecture",
+        "icon": "layers"
+      },
+      {
+        "name": "Artificial Intelligence",
+        "icon": "brain"
+      },
+      {
+        "name": "Cloud Computing",
+        "icon": "cloud"
+      },
+      {
+        "name": "Automation",
+        "icon": "workflow"
+      },
+      {
+        "name": "Payment Integrations",
+        "icon": "credit-card"
+      }
+    ],
+
+    "highlights": [
+      {
+        "title": "11+ Years",
+        "description": "Professional Experience"
+      },
+      {
+        "title": "Python",
+        "description": "Primary Language"
+      },
+      {
+        "title": "Django",
+        "description": "Backend Framework"
+      },
+      {
+        "title": "AWS",
+        "description": "Cloud Platform"
+      }
+    ]
+  },
+
+  "techRadar": [
     {
-      "title": "Award Name",
-      "issuer": "Issuing Organization",
-      "date": "YYYY-MM",
-      "description": "Brief description of the award."
+      "category": "Backend",
+      "color": "#4CAF50",
+      "items": [
+        {
+          "name": "Python",
+          "level": "Expert",
+          "score": 5,
+          "years": 11,
+          "favorite": true
+        },
+        {
+          "name": "Django",
+          "level": "Expert",
+          "score": 5,
+          "years": 10,
+          "favorite": true
+        },
+        {
+          "name": "Django REST Framework",
+          "level": "Expert",
+          "score": 5,
+          "years": 8
+        },
+        {
+          "name": "REST APIs",
+          "level": "Expert",
+          "score": 5,
+          "years": 10
+        },
+        {
+          "name": "Celery",
+          "level": "Advanced",
+          "score": 4,
+          "years": 5
+        },
+        {
+          "name": "FastAPI",
+          "level": "Learning",
+          "score": 2,
+          "years": 1
+        }
+      ]
+    },
+
+    {
+      "category": "Databases",
+      "color": "#2196F3",
+      "items": [
+        {
+          "name": "PostgreSQL",
+          "level": "Expert",
+          "score": 5,
+          "years": 10
+        },
+        {
+          "name": "MariaDB",
+          "level": "Advanced",
+          "score": 4,
+          "years": 2
+        },
+        {
+          "name": "MySQL",
+          "level": "Advanced",
+          "score": 4,
+          "years": 8
+        },
+        {
+          "name": "MongoDB",
+          "level": "Intermediate",
+          "score": 3,
+          "years": 3
+        },
+        {
+          "name": "SQL Server",
+          "level": "Intermediate",
+          "score": 3,
+          "years": 2
+        }
+      ]
+    },
+
+    {
+      "category": "Cloud & DevOps",
+      "color": "#FF9800",
+      "items": [
+        {
+          "name": "AWS",
+          "level": "Advanced",
+          "score": 4,
+          "years": 5
+        },
+        {
+          "name": "Docker",
+          "level": "Advanced",
+          "score": 4,
+          "years": 5
+        },
+        {
+          "name": "Redis",
+          "level": "Advanced",
+          "score": 4,
+          "years": 5
+        },
+        {
+          "name": "Git",
+          "level": "Expert",
+          "score": 5,
+          "years": 10
+        },
+        {
+          "name": "S3",
+          "level": "Advanced",
+          "score": 4,
+          "years": 3
+        },
+        {
+          "name": "SQS",
+          "level": "Advanced",
+          "score": 4,
+          "years": 3
+        },
+        {
+          "name": "Sentry",
+          "level": "Intermediate",
+          "score": 3,
+          "years": 2
+        }
+      ]
+    },
+
+    {
+      "category": "Frontend",
+      "color": "#9C27B0",
+      "items": [
+        {
+          "name": "JavaScript",
+          "level": "Advanced",
+          "score": 4,
+          "years": 10
+        },
+        {
+          "name": "Vue.js",
+          "level": "Intermediate",
+          "score": 3,
+          "years": 4
+        },
+        {
+          "name": "React",
+          "level": "Intermediate",
+          "score": 3,
+          "years": 2
+        },
+        {
+          "name": "HTML/CSS",
+          "level": "Advanced",
+          "score": 4,
+          "years": 10
+        }
+      ]
+    },
+
+    {
+      "category": "Testing",
+      "color": "#795548",
+      "items": [
+        {
+          "name": "Pytest",
+          "level": "Advanced",
+          "score": 4,
+          "years": 5
+        },
+        {
+          "name": "Unit Testing",
+          "level": "Advanced",
+          "score": 4,
+          "years": 6
+        },
+        {
+          "name": "Playwright",
+          "level": "Intermediate",
+          "score": 3,
+          "years": 2
+        },
+        {
+          "name": "TDD",
+          "level": "Intermediate",
+          "score": 3,
+          "years": 3
+        }
+      ]
+    },
+
+    {
+      "category": "Artificial Intelligence",
+      "color": "#E91E63",
+      "items": [
+        {
+          "name": "OpenAI API",
+          "level": "Advanced",
+          "score": 4,
+          "years": 2
+        },
+        {
+          "name": "Prompt Engineering",
+          "level": "Advanced",
+          "score": 4,
+          "years": 2
+        },
+        {
+          "name": "GitHub Copilot",
+          "level": "Advanced",
+          "score": 4,
+          "years": 2
+        },
+        {
+          "name": "AI Agents",
+          "level": "Advanced",
+          "score": 4,
+          "years": 2
+        },
+        {
+          "name": "LangChain",
+          "level": "Intermediate",
+          "score": 3,
+          "years": 1
+        },
+        {
+          "name": "LangGraph",
+          "level": "Intermediate",
+          "score": 3,
+          "years": 1
+        }
+      ]
     }
   ],
-  "publications": [
-    {
-      "title": "Publication Title",
-      "authors": ["Author1", "Author2"],
-      "publication": "Journal or Conference Name",
-      "date": "YYYY-MM",
-      "url": "https://example.com/publication"
-    }
-  ],
-  "testimonials": [
-    {
-      "name": "Testimonial Person",
-      "position": "Their Position",
-      "company": "Their Company",
-      "quote": "What they said about you.",
-      "image": "assets/images/testimonial1.jpg"
-    }
-  ],
+
   "socialNetworks": [
     {
       "name": "Twitter",

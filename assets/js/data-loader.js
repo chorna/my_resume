@@ -33,26 +33,37 @@ class DataLoader {
   getFallbackData() {
     return {
       "name": "Your Name",
-      "title": "Software Engineer",
-      "bio": "Passionate developer with expertise in building scalable web applications.",
+      "headline": "Professional Title",
+      "title": "Professional Title",
+      "location": "City, Country",
       "photo": "assets/images/placeholder.jpg",
       "email": "your.email@example.com",
-      "location": "City, Country",
+      "phone": "+1 234 567 890",
       "linkedin": "https://linkedin.com/in/yourprofile",
       "github": "https://github.com/yourusername",
       "website": "https://yourwebsite.com",
+      "resume": "assets/files/resume.pdf",
+      "summary": "Passionate developer with expertise in building scalable web applications.",
+      "about": "I'm a dedicated Software Engineer with a passion for creating elegant, efficient, and scalable software solutions.",
+      "careerHighlights": [
+        "Highlight 1",
+        "Highlight 2"
+      ],
       "experience": [
         {
           "company": "Company Name",
           "position": "Job Title",
           "location": "City, Country",
-          "startDate": "Jan 2020",
+          "startDate": "2020-01",
           "endDate": "Present",
           "description": "Brief description of your role and responsibilities.",
-          "highlights": [
-            "Achievement 1",
-            "Achievement 2",
-            "Achievement 3"
+          "responsibilities": [
+            "Responsibility 1",
+            "Responsibility 2"
+          ],
+          "stack": [
+            "Skill 1",
+            "Skill 2"
           ]
         }
       ],
@@ -60,74 +71,126 @@ class DataLoader {
         {
           "institution": "University Name",
           "degree": "Degree Name",
-          "fieldOfStudy": "Field of Study",
-          "startDate": "Sep 2016",
-          "endDate": "Jun 2020",
-          "description": "Brief description of your education."
-        }
-      ],
-      "skills": {
-        "technical": ["JavaScript", "HTML/CSS", "React", "Node.js", "Python"],
-        "frameworks": ["React", "Vue", "Angular", "Express"],
-        "tools": ["Git", "Docker", "AWS", "VS Code"]
-      },
-      "languages": [
-        {
-          "language": "English",
-          "proficiency": "Native"
-        },
-        {
-          "language": "Spanish",
-          "proficiency": "Intermediate"
-        }
-      ],
-      "projects": [
-        {
-          "name": "Project Name",
-          "description": "Brief description of the project.",
-          "image": "assets/images/project-placeholder.jpg",
-          "tags": ["JavaScript", "React", "Node.js"],
-          "links": [
-            {
-              "label": "Live Demo",
-              "url": "#"
-            },
-            {
-              "label": "Source Code",
-              "url": "#"
-            }
-          ]
+          "location": "City, Country",
+          "startYear": 2016,
+          "endYear": 2020
         }
       ],
       "certifications": [
         {
           "name": "Certification Name",
           "issuer": "Issuing Organization",
-          "date": "Date Earned",
-          "id": "ID123456"
+          "date": "2023-01",
+          "credentialId": "ID123456",
+          "url": "https://example.com/credential"
         }
       ],
-      "awards": [
+      "skills": {
+        "backend": ["Python", "Django"],
+        "databases": ["PostgreSQL"],
+        "frontend": ["JavaScript", "React"],
+        "cloud": ["AWS", "Docker"],
+        "testing": ["Jest"],
+        "methodologies": ["Agile"],
+        "ai": ["TensorFlow"]
+      },
+      "featuredSkills": ["Python", "Django", "AWS"],
+      "languages": [
         {
-          "title": "Award Name",
-          "issuer": "Awarding Organization",
-          "date": "Date Received",
-          "description": "Brief description of the award."
-        }
-      ],
-      "testimonials": [
+          "name": "English",
+          "level": "Native"
+        },
         {
-          "quote": "This person is amazing to work with!",
-          "author": "Colleague Name",
-          "position": "Job Title at Company"
+          "name": "Spanish",
+          "level": "Intermediate"
         }
       ],
-      "social": {
-        "twitter": "https://twitter.com/yourusername",
-        "linkedin": "https://linkedin.com/in/yourprofile",
-        "github": "https://github.com/yourusername",
-        "website": "https://yourwebsite.com"
-      }
+      "projects": [
+        {
+          "name": "Project Name",
+          "description": "Brief description of the project.",
+          "technologies": ["JavaScript", "React", "Node.js"],
+          "githubUrl": "https://github.com/yourusername/project",
+          "liveUrl": "https://yourproject.com",
+          "image": "assets/images/project-placeholder.jpg",
+          "highlights": [
+            "Highlight 1",
+            "Highlight 2"
+          ]
+        }
+      ],
+      "interests": [
+        "Artificial Intelligence",
+        "Cloud Computing"
+      ],
+      "availability": {
+        "remote": true,
+        "relocation": true,
+        "freelance": true
+      },
+      "developerDashboard": {
+        "experienceYears": 5,
+        "currentRole": "Developer",
+        "currentCompany": "Company Name",
+        "location": "City, Country",
+        "workMode": "Remote",
+        "summary": {
+          "companies": 2,
+          "industries": ["Tech", "Finance"],
+          "backendProjects": 10,
+          "restApis": 20,
+          "cloudProvider": "AWS",
+          "mainLanguage": "Python",
+          "specialization": "Full Stack"
+        },
+        "focusAreas": [
+          {
+            "name": "Web Development",
+            "icon": "code"
+          },
+          {
+            "name": "Cloud Architecture",
+            "icon": "cloud"
+          }
+        ],
+        "highlights": [
+          {
+            "title": "5+ Years",
+            "description": "Experience"
+          },
+          {
+            "title": "Python",
+            "description": "Primary Language"
+          }
+        ]
+      },
+      "techRadar": [
+        {
+          "category": "Backend",
+          "color": "#4CAF50",
+          "items": [
+            {
+              "name": "Python",
+              "level": "Expert",
+              "score": 5,
+              "years": 5,
+              "favorite": true
+            }
+          ]
+        }
+      ],
+      "socialNetworks": [
+        {
+          "name": "LinkedIn",
+          "url": "https://linkedin.com/in/yourprofile",
+          "icon": "linkedin"
+        },
+        {
+          "name": "GitHub",
+          "url": "https://github.com/yourusername",
+          "icon": "github"
+        }
+      ]
     };
   }
 
@@ -153,19 +216,21 @@ class DataLoader {
     this.populateProjects();
     this.populateCertifications();
     this.populateLanguages();
-    this.populateTestimonials();
+    this.populateDeveloperDashboard();
+    this.populateTechRadar();
     this.populateContact();
+    // Testimonials section removed as per new schema
   }
 
   /**
    * Populate hero section
    */
   populateHero() {
-    const { name, title, bio, photo } = this.profileData;
+    const { name, headline, summary, photo } = this.profileData;
 
     document.getElementById('hero-name').textContent = name;
-    document.getElementById('hero-title').textContent = title;
-    document.getElementById('hero-bio').textContent = bio;
+    document.getElementById('hero-title').textContent = headline;
+    document.getElementById('hero-bio').textContent = summary;
     document.getElementById('hero-image').src = photo || 'assets/images/placeholder.jpg';
     document.getElementById('hero-image').alt = `${name} photo`;
   }
@@ -174,10 +239,10 @@ class DataLoader {
    * Populate about section
    */
   populateAbout() {
-    const { name, bio } = this.profileData;
+    const { name, about } = this.profileData;
 
     document.getElementById('about-name').textContent = name;
-    document.getElementById('about-bio').textContent = bio;
+    document.getElementById('about-bio').textContent = about;
   }
 
   /**
@@ -194,18 +259,31 @@ class DataLoader {
       item.className = 'experience-item';
       item.setAttribute('data-item-index', index + 1);
 
+      // Format dates
+      const startDate = new Date(exp.startDate.replace(/-/g, '/'));
+      const endDate = exp.endDate ? new Date(exp.endDate.replace(/-/g, '/')) : null;
+      const startFormatted = startDate.toLocaleDateString('default', { month: 'short', year: 'numeric' });
+      const endFormatted = endDate ? endDate.toLocaleDateString('default', { month: 'short', year: 'numeric' }) : 'Present';
+
+      // Responsibilities list
+      const responsibilitiesList = exp.responsibilities && exp.responsibilities.length > 0 ?
+        `<ul class="experience-responsibilities">${exp.responsibilities.map(r => `<li>${r}</li>`).join('')}</ul>` : '';
+
+      // Technology stack badges
+      const stackBadges = exp.stack && exp.stack.length > 0 ?
+        `<div class="experience-stack">${exp.stack.map(skill => `<span class="skill-badge">${skill}</span>`).join('')}</div>` : '';
+
       item.innerHTML = `
         <div class="experience-content">
-          <span class="experience-date">${exp.startDate} – ${exp.endDate || 'Present'}</span>
-          <h3 class="experience-company">${exp.company}</h3>
-          <p class="experience-position">${exp.position}</p>
+          <div class="experience-header">
+            <h3 class="experience-company">${exp.company}</h3>
+            <p class="experience-position">${exp.position}</p>
+          </div>
+          <p class="experience-period">${startFormatted} – ${endFormatted}</p>
           ${exp.location ? `<p class="experience-location">${exp.location}</p>` : ''}
           ${exp.description ? `<p class="experience-description">${exp.description}</p>` : ''}
-          ${exp.highlights && exp.highlights.length > 0 ? `
-            <ul class="experience-highlights">
-              ${exp.highlights.map(h => `<li>${h}</li>`).join('')}
-            </ul>
-          ` : ''}
+          ${responsibilitiesList}
+          ${stackBadges}
         </div>
       `;
 
@@ -231,11 +309,9 @@ class DataLoader {
           🎓
         </div>
         <h3 class="education-title">${edu.institution}</h3>
-        <p class="education-degree">
-          ${edu.degree}${edu.fieldOfStudy ? `, ${edu.fieldOfStudy}` : ''}
-        </p>
-        <p class="education-period">${edu.startDate} – ${edu.endDate}</p>
-        ${edu.description ? `<p class="education-description">${edu.description}</p>` : ''}
+        <p class="education-degree">${edu.degree}</p>
+        ${edu.location ? `<p class="education-location">${edu.location}</p>` : ''}
+        <p class="education-period">${edu.startYear} – ${edu.endYear}</p>
       `;
 
       grid.appendChild(card);
@@ -244,6 +320,7 @@ class DataLoader {
 
   /**
    * Populate skills section
+   * Now a compact overview featuring featuredSkills
    */
   populateSkills() {
     const skillsContainer = document.getElementById('skills-container');
@@ -251,49 +328,20 @@ class DataLoader {
 
     skillsContainer.innerHTML = '';
 
-    // Technical skills
-    if (this.profileData.skills?.technical) {
-      const techCategory = document.createElement('div');
-      techCategory.className = 'skills-category';
+    // Featured skills as compact overview
+    if (this.profileData.featuredSkills && this.profileData.featuredSkills.length > 0) {
+      const featuredCategory = document.createElement('div');
+      featuredCategory.className = 'skills-category';
 
-      techCategory.innerHTML = `
-        <h3 class="skills-category-title">Technical Skills</h3>
+      featuredCategory.innerHTML = `
+        <h3 class="skills-category-title">Featured Skills</h3>
         <div class="skills-list">
-          ${this.profileData.skills.technical.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+          ${this.profileData.featuredSkills.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
         </div>
+        <p class="skills-note">For detailed expertise, see the Tech Radar section.</p>
       `;
 
-      skillsContainer.appendChild(techCategory);
-    }
-
-    // Frameworks
-    if (this.profileData.skills?.frameworks) {
-      const fwCategory = document.createElement('div');
-      fwCategory.className = 'skills-category';
-
-      fwCategory.innerHTML = `
-        <h3 class="skills-category-title">Frameworks & Libraries</h3>
-        <div class="skills-list">
-          ${this.profileData.skills.frameworks.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
-        </div>
-      `;
-
-      skillsContainer.appendChild(fwCategory);
-    }
-
-    // Tools
-    if (this.profileData.skills?.tools) {
-      const toolsCategory = document.createElement('div');
-      toolsCategory.className = 'skills-category';
-
-      toolsCategory.innerHTML = `
-        <h3 class="skills-category-title">Tools & Platforms</h3>
-        <div class="skills-list">
-          ${this.profileData.skills.tools.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
-        </div>
-      `;
-
-      skillsContainer.appendChild(toolsCategory);
+      skillsContainer.appendChild(featuredCategory);
     }
   }
 
@@ -310,6 +358,14 @@ class DataLoader {
       const card = document.createElement('div');
       card.className = 'project-card';
 
+      // Technologies badges
+      const techBadges = project.technologies && project.technologies.length > 0 ?
+        `<div class="project-technologies">${project.technologies.map(tech => `<span class="project-tag">${tech}</span>`).join('')}</div>` : '';
+
+      // Highlights list
+      const highlightsList = project.highlights && project.highlights.length > 0 ?
+        `<ul class="project-highlights">${project.highlights.map(h => `<li>${h}</li>`).join('')}</ul>` : '';
+
       card.innerHTML = `
         <div class="project-image">
           <img src="${project.image || 'assets/images/project-placeholder.jpg'}" alt="${project.name}">
@@ -317,17 +373,11 @@ class DataLoader {
         <div class="project-content">
           <h3 class="project-title">${project.name}</h3>
           <p class="project-description">${project.description}</p>
-          ${project.tags && project.tags.length > 0 ? `
-            <div class="project-tags">
-              ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
-            </div>
-          ` : ''}
+          ${techBadges}
+          ${highlightsList}
           <div class="project-links">
-            ${project.links && project.links.length > 0 ? project.links.map(link => `
-              <a href="${link.url}" target="_blank" rel="noopener" class="project-link">
-                ${link.label}
-              </a>
-            `).join('') : ''}
+            ${project.githubUrl ? `<a href="${project.githubUrl}" target="_blank" rel="noopener" class="project-link">GitHub</a>` : ''}
+            ${project.liveUrl ? `<a href="${project.liveUrl}" target="_blank" rel="noopener" class="project-link">Live Demo</a>` : ''}
           </div>
         </div>
       `;
@@ -356,7 +406,8 @@ class DataLoader {
         <h3 class="certification-title">${cert.name}</h3>
         <p class="certification-issuer">Issued by ${cert.issuer}</p>
         <p class="certification-date">${cert.date}</p>
-        ${cert.id ? `<p class="certification-id">ID: ${cert.id}</p>` : ''}
+        ${cert.credentialId ? `<p class="certification-id">ID: ${cert.credentialId}</p>` : ''}
+        ${cert.url ? `<a href="${cert.url}" target="_blank" rel="noopener" class="certification-url">Verify Credential</a>` : ''}
       `;
 
       grid.appendChild(card);
@@ -377,10 +428,10 @@ class DataLoader {
       item.className = 'language-item';
 
       item.innerHTML = `
-        <h3 class="language-name">${lang.language}</h3>
+        <h3 class="language-name">${lang.name}</h3>
         <div class="language-level">
-          <span class="language-level-dot ${this.getProficiencyClass(lang.proficiency)}"></span>
-          <span>${lang.proficiency}</span>
+          <span class="language-level-dot ${this.getProficiencyClass(lang.level)}"></span>
+          <span>${lang.level}</span>
         </div>
       `;
 
@@ -402,29 +453,201 @@ class DataLoader {
   }
 
   /**
-   * Populate testimonials section
+   * Populate Developer Dashboard section
    */
-  populateTestimonials() {
-    const container = document.getElementById('testimonials-container');
-    if (!container) return;
+  populateDeveloperDashboard() {
+    const dashboardContainer = document.getElementById('developer-dashboard');
+    if (!dashboardContainer) return;
 
-    container.innerHTML = '';
+    const { experienceYears, currentRole, currentCompany, location, workMode, summary, focusAreas, highlights } = this.profileData.developerDashboard;
 
-    this.profileData.testimonials.forEach((testimonial, index) => {
-      const slide = document.createElement('div');
-      slide.className = `testimonial-slide ${index === 0 ? 'active' : ''}`;
-
-      slide.innerHTML = `
-        <div class="testimonial-avatar">
-          <img src="assets/images/avatar-placeholder.jpg" alt="${testimonial.author}">
+    // Format summary stats
+    const statsHTML = `
+      <div class="dashboard-stats">
+        <div class="stat-card">
+          <div class="stat-icon">💼</div>
+          <div class="stat-content">
+            <h3 class="stat-value">${experienceYears}+</h3>
+            <p class="stat-label">Experience Years</p>
+          </div>
         </div>
-        <p class="testimonial-content">"${testimonial.quote}"</p>
-        <h4 class="testimonial-author">${testimonial.author}</h4>
-        <p class="testimonial-position">${testimonial.position}</p>
-      `;
+        <div class="stat-card">
+          <div class="stat-icon">💼</div>
+          <div class="stat-content">
+            <h3 class="stat-value">${currentRole}</h3>
+            <p class="stat-label">Current Role</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🏢</div>
+          <div class="stat-content">
+            <h3 class="stat-value">${currentCompany}</h3>
+            <p class="stat-label">Current Company</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">☁️</div>
+          <div class="stat-content">
+            <h3 class="stat-value">${summary.cloudProvider}</h3>
+            <p class="stat-label">Cloud Provider</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">💻</div>
+          <div class="stat-content">
+            <h3 class="stat-value">${summary.mainLanguage}</h3>
+            <p class="stat-label">Main Language</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🔌</div>
+          <div class="stat-content">
+            <h3 class="stat-value">${summary.backendProjects}</h3>
+            <p class="stat-label">Backend Projects</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🌐</div>
+          <div class="stat-content">
+            <h3 class="stat-value">${summary.restApis}</h3>
+            <p class="stat-label">REST APIs</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🎯</div>
+          <div class="stat-content">
+            <h3 class="stat-value">${summary.specialization}</h3>
+            <p class="stat-label">Specialization</p>
+          </div>
+        </div>
+      </div>
+    `;
 
-      container.appendChild(slide);
+    // Focus areas
+    const focusAreasHTML = focusAreas && focusAreas.length > 0 ?
+      `<div class="dashboard-focus">
+        <h3 class="dashboard-section-title">Focus Areas</h3>
+        <div class="focus-areas-grid">
+          ${focusAreas.map(area => `
+            <div class="focus-area-card">
+              <div class="focus-area-icon">${this.getIconHtml(area.icon)}</div>
+              <h4 class="focus-area-name">${area.name}</h4>
+            </div>
+          `).join('')}
+        </div>
+      </div>` : '';
+
+    // Highlights
+    const highlightsHTML = highlights && highlights.length > 0 ?
+      `<div class="dashboard-highlights">
+        <h3 class="dashboard-section-title">Highlights</h3>
+        <div class="highlights-grid">
+          ${highlights.map(highlight => `
+            <div class="highlight-card">
+              <h4 class="highlight-title">${highlight.title}</h4>
+              <p class="highlight-description">${highlight.description}</p>
+            </div>
+          `).join('')}
+        </div>
+      </div>` : '';
+
+    dashboardContainer.innerHTML = `
+      <div class="dashboard-header">
+        <h2 class="dashboard-title">Developer Dashboard</h2>
+      </div>
+      ${statsHTML}
+      ${focusAreasHTML}
+      ${highlightsHTML}
+    `;
+  }
+
+  /**
+   * Populate Tech Radar section
+   */
+  populateTechRadar() {
+    const radarContainer = document.getElementById('tech-radar');
+    if (!radarContainer) return;
+
+    const techRadar = this.profileData.techRadar;
+
+    let categoriesHTML = '';
+
+    techRadar.forEach(category => {
+      const { category: catName, color, items } = category;
+
+      const itemsHTML = items && items.length > 0 ?
+        `<div class="radar-items">
+          ${items.map(item => {
+            const { name, level, score, years, favorite } = item;
+            const levelClass = this.getLevelClass(level);
+            const favoriteClass = favorite ? 'favorite' : '';
+            return `
+              <div class="radar-item ${favoriteClass}" style="border-left-color: ${color};">
+                <div class="radar-item-content">
+                  <h4 class="radar-item-name">${name}</h4>
+                  <div class="radar-item-meta">
+                    <span class="radar-item-level ${levelClass}">${level}</span>
+                    <span class="radar-item-years">${years} yrs</span>
+                  </div>
+                  <div class="radar-item-score">
+                    ${'★'.repeat(score)}${'☆'.repeat(5 - score)}
+                  </div>
+                </div>
+              </div>
+            `;
+          }).join('')}
+        </div>` : '';
+
+      categoriesHTML += `
+        <div class="radar-category">
+          <h3 class="radar-category-title" style="border-left: 4px solid ${color};">${catName}</h3>
+          ${itemsHTML}
+        </div>
+      `;
     });
+
+    radarContainer.innerHTML = `
+      <div class="radar-header">
+        <h2 class="radar-title">Tech Radar</h2>
+      </div>
+      <div class="radar-categories">
+        ${categoriesHTML}
+      </div>
+    `;
+  }
+
+  /**
+   * Get icon HTML based on icon name (for Font Awesome or similar)
+   * @param {string} iconName - Icon name (e.g., 'server', 'brain')
+   * @returns {string} HTML for icon
+   */
+  getIconHtml(iconName) {
+    // Map icon names to Font Awesome classes (assuming Font Awesome is available)
+    const iconMap = {
+      'server': 'fas fa-server',
+      'layers': 'fas fa-layer-group',
+      'brain': 'fas fa-brain',
+      'cloud': 'fas fa-cloud',
+      'workflow': 'fas fa-project-diagram',
+      'credit-card': 'fas fa-credit-card',
+      'code': 'fas fa-code',
+      // Default
+      'default': 'fas fa-cog'
+    };
+    return `<i class="${iconMap[iconName] || iconMap.default}"></i>`;
+  }
+
+  /**
+   * Get CSS class for tech radar level
+   * @param {string} level - Level string (Expert, Advanced, etc.)
+   * @returns {string} CSS class name
+   */
+  getLevelClass(level) {
+    const levelLower = level.toLowerCase();
+    if (levelLower.includes('expert')) return 'level-expert';
+    if (levelLower.includes('advanced')) return 'level-advanced';
+    if (levelLower.includes('intermediate')) return 'level-intermediate';
+    return 'level-learning';
   }
 
   /**
@@ -434,17 +657,21 @@ class DataLoader {
     // Contact info
     const contactInfo = document.getElementById('contact-info');
     if (contactInfo) {
-      const { email, location, linkedin, github, website } = this.profileData;
+      const { email, phone, linkedin, github, website, location } = this.profileData;
 
       contactInfo.innerHTML = `
-        <div class="contact-item">
+        ${email ? `<div class="contact-item">
           <span>📧</span>
           <span>${email}</span>
-        </div>
-        <div class="contact-item">
+        </div>` : ''}
+        ${phone ? `<div class="contact-item">
+          <span>📞</span>
+          <span>${phone}</span>
+        </div>` : ''}
+        ${location ? `<div class="contact-item">
           <span>📍</span>
           <span>${location}</span>
-        </div>
+        </div>` : ''}
         ${linkedin ? `<div class="contact-item">
           <span>💼</span>
           <a href="${linkedin}" target="_blank" rel="noopener">LinkedIn</a>
