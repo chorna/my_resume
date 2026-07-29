@@ -30,6 +30,9 @@ class App {
 
       // Add scroll progress indicator
       this.initScrollProgress();
+
+      // Add scroll spy for active navigation
+      this.initScrollSpy();
     } catch (error) {
       console.error('Error initializing application:', error);
     }
@@ -92,6 +95,14 @@ class App {
             top: targetElement.offsetTop - 80, // Offset for fixed header
             behavior: 'smooth'
           });
+
+          // Close mobile menu if open
+          const navMenu = document.querySelector('.nav-menu');
+          const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+          if (navMenu && mobileMenuBtn && navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            mobileMenuBtn.classList.remove('active');
+          }
         }
       });
     });
@@ -115,6 +126,34 @@ class App {
       const scrollPercentage = (scrollTop / windowHeight) * 100;
       progressBar.style.width = scrollPercentage + '%';
     });
+  }
+
+  initScrollSpy() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    const updateActiveLink = () => {
+      let scrollPos = window.scrollY + 80; // offset for header (same as smooth scrolling offset)
+
+      sections.forEach(section => {
+        const top = section.offsetTop;
+        const height = section.offsetHeight;
+        const id = section.getAttribute('id');
+
+        if (scrollPos >= top && scrollPos < top + height) {
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${id}`) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    };
+
+    window.addEventListener('scroll', updateActiveLink);
+    // Also run on load in case page starts mid-section
+    window.addEventListener('load', updateActiveLink);
   }
 }
 
