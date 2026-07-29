@@ -345,7 +345,12 @@
     "workMode": "Remote / Hybrid",
 
     "summary": {
-      "companies": 4,
+      "companies": [
+        "QDS",
+        "Clarity Wave",
+        "LithoLaser",
+        "VWPlanner"
+      ],
       "industries": [
         "HR SaaS",
         "Education",
@@ -357,6 +362,7 @@
       "restApis": 40,
       "cloudProvider": "AWS",
       "mainLanguage": "Python",
+      "backendFramework": "Django",
       "specialization": "Backend Architecture"
     },
 
@@ -384,25 +390,6 @@
       {
         "name": "Payment Integrations",
         "icon": "credit-card"
-      }
-    ],
-
-    "highlights": [
-      {
-        "title": "11+ Years",
-        "description": "Professional Experience"
-      },
-      {
-        "title": "Python",
-        "description": "Primary Language"
-      },
-      {
-        "title": "Django",
-        "description": "Backend Framework"
-      },
-      {
-        "title": "AWS",
-        "description": "Cloud Platform"
       }
     ]
   },

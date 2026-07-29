@@ -681,14 +681,7 @@ input:checked + .slider:before {
   display: flex;
   flex-wrap: wrap;
   gap: var(--spacing-4);
-  flex: 0 0 250px; /* Fixed width for KPIs column on larger screens, but will wrap */
-}
-
-/* On larger screens, we want the KPIs to take a fixed width and the body to take the rest */
-@media (min-width: 768px) {
-  .dashboard-kpis {
-    flex: 0 0 260px;
-  }
+  flex: 0 0 260px; /* Fixed width for KPIs column on larger screens, but will wrap */
 }
 
 .dashboard-kpi-item {
@@ -729,8 +722,7 @@ input:checked + .slider:before {
 
 /* Focus Items */
 .focus-areas-list,
-.summary-items,
-.highlights-list {
+.summary-items {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-3);
@@ -738,8 +730,7 @@ input:checked + .slider:before {
 }
 
 .focus-item,
-.summary-item,
-.highlight-item {
+.summary-item {
   display: flex;
   align-items: center;
   gap: var(--spacing-3);
@@ -761,24 +752,24 @@ input:checked + .slider:before {
   color: var(--color-primary);
 }
 
-/* For summary and items, we don't have an icon, so we adjust the layout */
-.summary-item,
-.highlight-item {
+/* For summary items, we don't have an icon, so we adjust the layout */
+.summary-item {
   /* Override to not expect an icon */
 }
 
 .summary-item .summary-label,
-.highlight-item .highlight-title {
-  flex: 1;
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text);
+.summary-item .summary-value {
+  display: block;
 }
 
-.summary-item .summary-value,
-.highlight-item .highlight-description {
-  font-size: var(--font-size-sm);
+.summary-item .summary-label {
+  font-weight: var(--font-weight-semibold);
+  width: 100px;
+}
+
+.summary-item .summary-value {
   color: var(--color-muted);
+  flex: 1;
 }
 
 /* Section titles within the dashboard columns */

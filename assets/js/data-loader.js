@@ -475,17 +475,13 @@ class DataLoader {
    * Populate Developer Dashboard section
    */
   populateDeveloperDashboard() {
-    const dashboardContainer = document.querySelector('#developer-dashboard');
+    const dashboardContainer = document.querySelector('#developer-dashboard .dashboard-container');
     if (!dashboardContainer) return;
 
     const { experienceYears, currentRole, currentCompany, location, workMode, summary, focusAreas, highlights } = this.profileData.developerDashboard;
 
-    // Create dashboard structure
+    // Create dashboard structure without highlights
     dashboardContainer.innerHTML = `
-      <div class="container">
-      <div class="dashboard-header">
-        <h2 class="dashboard-title">Developer Dashboard</h2>
-      </div>
       <div class="dashboard-content">
         <div class="dashboard-kpis">
           <!-- KPI items will be populated here -->
@@ -495,18 +491,11 @@ class DataLoader {
             <h3 class="dashboard-section-title">Focus Areas</h3>
             <div class="focus-areas-list"></div>
           </div>
-          <div class="dashboard-column details">
-            <div class="dashboard-section summary">
-              <h4 class="dashboard-section-title">Summary</h4>
-              <div class="summary-items"></div>
-            </div>
-            <div class="dashboard-section highlights">
-              <h4 class="dashboard-section-title">Highlights</h4>
-              <div class="highlights-list"></div>
-            </div>
+          <div class="dashboard-column summary-section">
+            <h3 class="dashboard-section-title">Summary</h3>
+            <div class="summary-items"></div>
           </div>
         </div>
-      </div>
       </div>
     `;
 
@@ -514,7 +503,6 @@ class DataLoader {
     const kpisContainer = dashboardContainer.querySelector('.dashboard-kpis');
     const focusAreasContainer = dashboardContainer.querySelector('.focus-areas-list');
     const summaryItemsContainer = dashboardContainer.querySelector('.summary-items');
-    const highlightsListContainer = dashboardContainer.querySelector('.highlights-list');
 
     // Populate KPIs
     this.populateKPIs(kpisContainer, experienceYears, currentRole, currentCompany, summary);
@@ -524,9 +512,6 @@ class DataLoader {
 
     // Populate Summary Items
     this.populateSummaryItems(summaryItemsContainer, summary);
-
-    // Populate Highlights
-    this.populateHighlights(highlightsListContainer, highlights);
 
     // Trigger animation on scroll
     this.animateDashboardItems();
@@ -548,7 +533,8 @@ class DataLoader {
       { label: 'Backend Projects', value: `${summary.backendProjects}+` },
       { label: 'REST APIs', value: `${summary.restApis}+` },
       { label: 'Cloud Provider', value: summary.cloudProvider },
-      { label: 'Main Language', value: summary.mainLanguage }
+      { label: 'Main Language', value: summary.mainLanguage },
+      { label: 'Backend Framework', value: summary.backendFramework }
     ];
 
     kpis.forEach(kpi => {
@@ -592,6 +578,7 @@ class DataLoader {
    */
   populateSummaryItems(container, summary) {
     const items = [
+      { label: 'Companies', value: summary.companies.join(', ') },
       { label: 'Industries', value: summary.industries.join(', ') },
       { label: 'Specialization', value: summary.specialization },
       { label: 'Location', value: this.profileData.developerDashboard.location }
