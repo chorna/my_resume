@@ -485,163 +485,154 @@ class DataLoader {
       <div class="dashboard-header">
         <h2 class="dashboard-title">Developer Dashboard</h2>
       </div>
-      <div class="dashboard-content"></div>
-      <div class="dashboard-focus">
-        <h3 class="dashboard-section-title">Focus Areas</h3>
-        <div class="focus-areas-grid"></div>
-      </div>
-      <div class="dashboard-highlights">
-        <h3 class="dashboard-section-title">Highlights</h3>
-        <div class="highlights-grid"></div>
+      <div class="dashboard-content">
+        <div class="dashboard-kpis">
+          <!-- KPI items will be populated here -->
+        </div>
+        <div class="dashboard-body">
+          <div class="dashboard-column focus-areas">
+            <h3 class="dashboard-section-title">Focus Areas</h3>
+            <div class="focus-areas-list"></div>
+          </div>
+          <div class="dashboard-column details">
+            <div class="dashboard-section summary">
+              <h3 class="dashboard-section-title">Summary</h3>
+              <div class="summary-items"></div>
+            </div>
+            <div class="dashboard-section highlights">
+              <h3 class="dashboard-section-title">Highlights</h3>
+              <div class="highlights-list"></div>
+            </div>
+          </div>
+        </div>
       </div>
     `;
 
     // Get references to containers
-    const statsContainer = dashboardContainer.querySelector('.dashboard-content');
-    const focusAreasContainer = dashboardContainer.querySelector('.focus-areas-grid');
-    const highlightsContainer = dashboardContainer.querySelector('.highlights-grid');
+    const kpisContainer = dashboardContainer.querySelector('.dashboard-kpis');
+    const focusAreasContainer = dashboardContainer.querySelector('.focus-areas-list');
+    const summaryItemsContainer = dashboardContainer.querySelector('.summary-items');
+    const highlightsListContainer = dashboardContainer.querySelector('.highlights-list');
 
-    // Create and populate stats
-    this.createStats(statsContainer, experienceYears, currentRole, currentCompany, location, workMode, summary);
+    // Populate KPIs
+    this.populateKPIs(kpisContainer, experienceYears, currentRole, currentCompany, summary);
 
-    // Create and populate focus areas
-    this.createFocusAreas(focusAreasContainer, focusAreas);
+    // Populate Focus Areas
+    this.populateFocusAreas(focusAreasContainer, focusAreas);
 
-    // Create and populate highlights
-    this.createHighlights(highlightsContainer, highlights);
+    // Populate Summary Items
+    this.populateSummaryItems(summaryItemsContainer, summary);
+
+    // Populate Highlights
+    this.populateHighlights(highlightsListContainer, highlights);
 
     // Trigger animation on scroll
     this.animateDashboardItems();
   }
 
   /**
-   * Create and populate stats cards
+   * Populate KPIs in the dashboard
+   * @param {HTMLElement} container - Container element
+   * @param {number} experienceYears - Years of experience
+   * @param {string} currentRole - Current role
+   * @param {string} currentCompany - Current company
+   * @param {Object} summary - Summary object
    */
-  createStats(container, experienceYears, currentRole, currentCompany, location, workMode, summary) {
-    const stats = [
-      {
-        value: `${experienceYears}+`,
-        label: 'Experience Years',
-        icon: 'fas fa-briefcase',
-        highlight: true
-      },
-      {
-        value: currentRole,
-        label: 'Current Role',
-        icon: 'fas fa-user-tie',
-        highlight: true
-      },
-      {
-        value: currentCompany,
-        label: 'Current Company',
-        icon: 'fas fa-building',
-        highlight: true
-      },
-      {
-        value: location,
-        label: 'Location',
-        icon: 'fas fa-map-marker-alt'
-      },
-      {
-        value: workMode,
-        label: 'Work Mode',
-        icon: 'fas fa-network-wired'
-      },
-      {
-        value: summary.cloudProvider,
-        label: 'Cloud Provider',
-        icon: 'fas fa-cloud'
-      },
-      {
-        value: summary.mainLanguage,
-        label: 'Main Language',
-        icon: 'fas fa-laptop-code'
-      },
-      {
-        value: summary.backendProjects,
-        label: 'Backend Projects',
-        icon: 'fas fa-code'
-      },
-      {
-        value: summary.restApis,
-        label: 'REST APIs',
-        icon: 'fas fa-globe'
-      },
-      {
-        value: summary.specialization,
-        label: 'Specialization',
-        icon: 'fas fa-bullseye'
-      }
+  populateKPIs(container, experienceYears, currentRole, currentCompany, summary) {
+    const kpis = [
+      { label: 'Experience Years', value: `${experienceYears}+` },
+      { label: 'Current Role', value: currentRole },
+      { label: 'Current Company', value: currentCompany },
+      { label: 'Backend Projects', value: `${summary.backendProjects}+` },
+      { label: 'REST APIs', value: `${summary.restApis}+` },
+      { label: 'Cloud Provider', value: summary.cloudProvider },
+      { label: 'Main Language', value: summary.mainLanguage }
     ];
 
-    stats.forEach((stat, index) => {
-      const card = document.createElement('div');
-      card.className = `stat-card ${stat.highlight ? 'highlight' : ''} animate-fade-in`;
-      card.style.setProperty('--item-index', index + 1);
+    kpis.forEach(kpi => {
+      const kpiItem = document.createElement('div');
+      kpiItem.className = 'dashboard-kpi-item';
 
-      card.innerHTML = `
-        <div class="stat-icon">
-          <i class="${stat.icon}"></i>
-        </div>
-        <div class="stat-content">
-          <h3 class="stat-value">${stat.value}</h3>
-          <p class="stat-label">${stat.label}</p>
-        </div>
+      kpiItem.innerHTML = `
+        <div class="kpi-value">${kpi.value}</div>
+        <div class="kpi-label">${kpi.label}</div>
       `;
 
-      container.appendChild(card);
+      container.appendChild(kpiItem);
     });
   }
 
   /**
-   * Create and populate focus areas cards
+   * Populate Focus Areas
+   * @param {HTMLElement} container - Container element
+   * @param {Array} focusAreas - Array of focus area objects
    */
-  createFocusAreas(container, focusAreas) {
+  populateFocusAreas(container, focusAreas) {
     if (!focusAreas || focusAreas.length === 0) return;
 
-    focusAreas.forEach((area, index) => {
-      const card = document.createElement('div');
-      card.className = `focus-area-card animate-fade-in`;
-      card.style.setProperty('--item-index', index + 1);
+    focusAreas.forEach(area => {
+      const item = document.createElement('div');
+      item.className = 'focus-item';
 
-      card.innerHTML = `
-        <div class="focus-area-icon">
-          ${this.getIconHtml(area.icon)}
-        </div>
-        <h4 class="focus-area-name">${area.name}</h4>
+      item.innerHTML = `
+        <div class="focus-icon">${this.getIconHtml(area.icon)}</div>
+        <h4 class="focus-name">${area.name}</h4>
       `;
 
-      container.appendChild(card);
+      container.appendChild(item);
     });
   }
 
   /**
-   * Create and populate highlights cards
+   * Populate Summary Items
+   * @param {HTMLElement} container - Container element
+   * @param {Object} summary - Summary object
    */
-  createHighlights(container, highlights) {
+  populateSummaryItems(container, summary) {
+    const items = [
+      { label: 'Industries', value: summary.industries.join(', ') },
+      { label: 'Specialization', value: summary.specialization },
+      { label: 'Location', value: this.profileData.developerDashboard.location }
+    ];
+
+    // Filter out empty values
+    const filteredItems = items.filter(item => item.value);
+
+    filteredItems.forEach(item => {
+      const itemEl = document.createElement('div');
+      itemEl.className = 'summary-item';
+
+      itemEl.innerHTML = `
+        <span class="summary-label">${item.label}:</span>
+        <span class="summary-value">${item.value}</span>
+      `;
+
+      container.appendChild(itemEl);
+    });
+  }
+
+  /**
+   * Populate Highlights
+   * @param {HTMLElement} container - Container element
+   * @param {Array} highlights - Array of highlight objects
+   */
+  populateHighlights(container, highlights) {
     if (!highlights || highlights.length === 0) return;
 
-    highlights.forEach((highlight, index) => {
-      const card = document.createElement('div');
-      card.className = `highlight-card animate-fade-in`;
-      card.style.setProperty('--item-index', index + 1);
+    highlights.forEach(highlight => {
+      const item = document.createElement('div');
+      item.className = 'highlight-item';
 
-      // Get icon for this highlight
-      const iconName = this.getHighlightIconName(highlight.title);
-      const iconHtml = this.getIconHtml(iconName);
-
-      card.innerHTML = `
-        <div class="highlight-icon">
-          ${iconHtml}
-        </div>
+      item.innerHTML = `
         <h4 class="highlight-title">${highlight.title}</h4>
         <p class="highlight-description">${highlight.description}</p>
       `;
 
-      container.appendChild(card);
+      container.appendChild(item);
     });
   }
 
+  
   /**
    * Animate dashboard items on scroll
    */
