@@ -390,6 +390,8 @@ header {
 .nav-menu {
   display: flex;
   gap: var(--spacing-6);
+  flex-grow: 1;
+  justify-content: flex-end;
 }
 
 .nav-menu a {
@@ -405,6 +407,86 @@ header {
 .nav-menu a.active {
   color: var(--color-primary);
   font-weight: var(--font-weight-semibold);
+}
+
+/* Theme Switch */
+.theme-toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  margin-left: var(--spacing-4);
+}
+
+.theme-toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--color-primary);
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+/* Icons for sun/moon */
+.slider:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 10px;
+  line-height: 18px;
+}
+
+.slider.sun:before {
+  content: "\f185"; /* sun */
+  color: #f39c12;
+  left: 4px;
+}
+
+.slider.moon:before {
+  content: "\f186"; /* moon */
+  color: #fff;
+  left: 4px;
+}
+
+/* Position icons based on theme */
+.dark-theme .slider:before {
+  content: "\f185"; /* sun */
+  left: 20px;
+  color: #f39c12;
+}
+
+.light-theme .slider:before {
+  content: "\f186"; /* moon */
+  left: 4px;
+  color: #fff;
 }
 
 /* Mobile menu toggle */

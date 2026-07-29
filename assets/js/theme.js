@@ -1,7 +1,7 @@
 // Theme Manager
 class ThemeManager {
   constructor() {
-    this.themeToggle = document.getElementById('theme-toggle');
+    this.themeCheckbox = document.querySelector('.theme-toggle-checkbox');
     this.rootElement = document.documentElement;
     this.init();
   }
@@ -13,25 +13,32 @@ class ThemeManager {
 
     if (savedTheme) {
       this.setTheme(savedTheme);
+      // Update checkbox state
+      if (this.themeCheckbox) {
+        this.themeCheckbox.checked = savedTheme === 'dark';
+      }
     } else if (systemPrefersDark) {
       this.setTheme('dark');
+      if (this.themeCheckbox) {
+        this.themeCheckbox.checked = true;
+      }
     } else {
       this.setTheme('light');
+      if (this.themeCheckbox) {
+        this.themeCheckbox.checked = false;
+      }
     }
 
-    // Add click event listener to toggle button
-    if (this.themeToggle) {
-      this.themeToggle.addEventListener('click', () => this.toggleTheme());
+    // Add change event listener to checkbox
+    if (this.themeCheckbox) {
+      this.themeCheckbox.addEventListener('change', (e) => {
+        const newTheme = e.target.checked ? 'dark' : 'light';
+        this.setTheme(newTheme);
+      });
     }
 
-    // Update icon based on current theme
-    this.updateThemeIcon();
-  }
-
-  toggleTheme() {
-    const currentTheme = this.rootElement.classList.contains('dark-theme') ? 'dark' : 'light';
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    this.setTheme(newTheme);
+    // Initial UI update
+    this.updateThemeUI();
   }
 
   setTheme(theme) {
@@ -44,13 +51,12 @@ class ThemeManager {
       this.rootElement.classList.add('light-theme');
       localStorage.setItem('theme', 'light');
     }
-    this.updateThemeIcon();
+    this.updateThemeUI();
   }
 
-  updateThemeIcon() {
-    if (!this.themeToggle) return;
+  updateThemeUI() {
     const isDark = this.rootElement.classList.contains('dark-theme');
-    this.themeToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+    // Update any slider-based UI if needed (our CSS handles this via class)
   }
 }
 
