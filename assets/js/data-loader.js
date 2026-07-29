@@ -468,7 +468,7 @@ class DataLoader {
     if (level.includes('expert')) return 'expert';
     if (level.includes('advanced') || level.includes('fluent')) return 'advanced';
     if (level.includes('intermediate')) return 'intermediate';
-    return 'beginner';
+    return 'expert';
   }
 
   /**
