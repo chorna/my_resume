@@ -40,7 +40,7 @@
     </script>
 
     <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%233b82f6'/%3E%3Ctext x='50' y='55' font-size='40' text-anchor='middle' fill='white' font-weight='bold'%3E👨‍💻%3C/text%3E%3C/svg%3E" type="image/svg+xml">
 
     <!-- CSS Files -->
     <link rel="stylesheet" href="assets/css/variables.css">
@@ -219,23 +219,37 @@
                     I'm currently open for new opportunities, freelance projects, and collaborations.
                     Feel free to reach out through any of the channels below.
                 </p>
-                <div class="contact-links">
-                    <a href="mailto:christian1020@gmail.com" class="contact-link">
-                        <span>📧</span>
-                        <span>christian1020>christian1020@gmail.com</span>
-                    </a>
-                    <a href="https://linkedin.com/in/christianhorna" target="_blank" rel="noopener" class="contact-link">
-                        <span>💼</span>
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="https://github.com/chorna" target="_blank" rel="noopener" class="contact-link">
-                        <span>💻</span>
-                        <span>GitHub</span>
-                    </a>
-                    <a href="assets/files/christian-horna-cv.pdf" download class="contact-link">
-                        <span>📄</span>
-                        <span>Download Resume</span>
-                    </a>
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <h3 class="contact-title">Get in Touch</h3>
+                        <p class="contact-description">Have a project in mind? Let's connect!</p>
+                        <div class="contact-methods">
+                            <span class="contact-link">
+                                <span class="contact-icon">📧</span>
+                                <a href="mailto:christian1020@gmail.com">
+                                    <span>christian1020@gmail.com</span>
+                                </a>
+                            </span>
+                            <span class="contact-link">
+                                <span class="contact-icon"><i class="fab fa-whatsapp"></i></span>
+                                <a href="https://wa.me/+51923421779" target="_blank" rel="noopener">
+                                    <span>WhatsApp</span>
+                                </a>
+                            </span>
+                            <span class="contact-link">
+                                <span class="contact-icon">💼</span>
+                                <a href="https://linkedin.com/in/christianhorna" target="_blank" rel="noopener">
+                                    <span>LinkedIn</span>
+                                </a>
+                            </span>
+                            <span class="contact-link">
+                                <span class="contact-icon">💻</span>
+                                <a href="https://github.com/chorna" target="_blank" rel="noopener">
+                                    <span>GitHub</span>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -245,12 +259,35 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-info">
-                    <p>&copy; <span id="current-year"></span> Christian Horna. All rights reserved.</p>
+                <div class="footer-brand">
+                    <span class="logo-icon">👨‍💻</span>
+                    <span>Christian Horna</span>
+                    <p class="footer-tagline">Senior Backend Engineer | Python & Django Specialist</p>
                 </div>
                 <div class="footer-links">
-                    <a href="#" aria-label="Privacy Policy">Privacy</a>
-                    <a href="#" aria-label="Terms of Service">Terms</a>
+                    <div class="footer-link-group">
+                        <h4 class="footer-title">Company</h4>
+                        <a href="#about" class="footer-link">About</a>
+                        <a href="#experience" class="footer-link">Experience</a>
+                        <a href="#projects" class="footer-link">Projects</a>
+                    </div>
+                    <div class="footer-link-group">
+                        <h4 class="footer-title">Resources</h4>
+                        <a href="#tech-radar" class="footer-link">Tech Radar</a>
+                        <a href="#certifications" class="footer-link">Certifications</a>
+                        <a href="#languages" class="footer-link">Languages</a>
+                    </div>
+                </div>
+                <div class="footer-social">
+                    <a href="https://linkedin.com/in/christianhorna" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/chorna" target="_blank" rel="noopener" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://twitter.com/ChristianHorna" target="_blank" rel="noopener" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
                 </div>
             </div>
         </div>

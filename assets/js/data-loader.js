@@ -482,6 +482,7 @@ class DataLoader {
 
     // Create dashboard structure
     dashboardContainer.innerHTML = `
+      <div class="container">
       <div class="dashboard-header">
         <h2 class="dashboard-title">Developer Dashboard</h2>
       </div>
@@ -496,15 +497,16 @@ class DataLoader {
           </div>
           <div class="dashboard-column details">
             <div class="dashboard-section summary">
-              <h3 class="dashboard-section-title">Summary</h3>
+              <h4 class="dashboard-section-title">Summary</h4>
               <div class="summary-items"></div>
             </div>
             <div class="dashboard-section highlights">
-              <h3 class="dashboard-section-title">Highlights</h3>
+              <h4 class="dashboard-section-title">Highlights</h4>
               <div class="highlights-list"></div>
             </div>
           </div>
         </div>
+      </div>
       </div>
     `;
 
@@ -576,7 +578,7 @@ class DataLoader {
 
       item.innerHTML = `
         <div class="focus-icon">${this.getIconHtml(area.icon)}</div>
-        <h4 class="focus-name">${area.name}</h4>
+        <h6 class="focus-name">${area.name}</h6>
       `;
 
       container.appendChild(item);
@@ -719,12 +721,14 @@ class DataLoader {
     });
 
     radarContainer.innerHTML = `
+    <div class="container">
       <div class="radar-header">
         <h2 class="radar-title">Tech Radar</h2>
       </div>
       <div class="radar-accordion">
         ${categoriesHTML}
       </div>
+    </div>
     `;
 
     // Add event listeners for accordion functionality
