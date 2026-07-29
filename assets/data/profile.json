@@ -1,6 +1,6 @@
 {
   "name": "Christian Horna",
-  "headline": "Senior Python Backend Developer",
+  "headline": "Senior Backend Engineer specializing in Django, Distributed Systems and Cloud Architecture.",
   "title": "Senior Backend Engineer | Python & Django Specialist",
   "location": "Lima, Perú (GMT-5)",
   "photo": "assets/images/photo.png",
@@ -10,8 +10,8 @@
   "github": "https://github.com/chorna",
   "website": "https://chorna.github.io/my_resumen/",
   "resume": "assets/files/christian-horna-cv.pdf",
-  "summary": "Ingeniero de Sistemas con más de 10 años de experiencia desarrollando aplicaciones web escalables y APIs para empresas de Latinoamérica, Estados Unidos y España. Especializado en Python, Django, Django REST Framework y PostgreSQL. Experiencia en arquitecturas backend desplegadas en AWS, optimización de consultas SQL, procesos asíncronos y desarrollo de plataformas SaaS.",
-  "about": "He participado en proyectos de recursos humanos, auditoría, manufactura, construcción y salud, liderando iniciativas de mejora continua, automatización y escalabilidad. Me apasionan la Inteligencia Artificial, los agentes autónomos, blockchain y el desarrollo de soluciones backend de alto rendimiento.",
+  "summary": "10+ years building scalable backend platforms using Python, Django, REST APIs, Celery, AWS and Docker. Passionate about clean architecture, performance optimization and AI Agents.",
+  "about": "Senior Backend Engineer with 11+ years of experience designing and building scalable backend systems across SaaS, HR, manufacturing, construction, healthcare, and education industries. Specialized in Python, Django, REST APIs, distributed systems, and cloud-native architectures on AWS. Passionate about clean architecture, performance optimization, automation, Artificial Intelligence, autonomous AI agents, and blockchain technologies. I enjoy solving complex engineering challenges by delivering secure, maintainable, and high-performance backend solutions that create measurable business value.",
 
   "careerHighlights": [
     "Más de 10 años de experiencia profesional.",
@@ -31,16 +31,16 @@
       "location": "Perú",
       "startDate": "2025-08",
       "endDate": null,
-      "description": "Desarrollo y mantenimiento de APIs REST para una plataforma de bienestar, enfocándome en rendimiento, seguridad, integraciones y procesos backend escalables.",
+      "description": "Develop and maintain scalable backend services for a digital wellness platform, focusing on API design, system performance, security, cloud integrations, and asynchronous processing on AWS.",
       "responsibilities": [
-        "Desarrollé y mantuve APIs REST utilizando Django y Django REST Framework.",
-        "Implementé pruebas unitarias y de integración para mejorar la calidad del software y reducir incidencias en producción.",
-        "Optimicé consultas SQL y procesos backend para mejorar el rendimiento de módulos críticos.",
-        "Diseñé e implementé integraciones con WhatsApp para automatizar recordatorios y comunicaciones transaccionales.",
-        "Implementé procesos asíncronos para envío de correos y procesamiento de eventos utilizando Celery, AWS SQS y otros servicios de AWS.",
-        "Participé en la integración de la pasarela de pagos Izipay para habilitar transacciones seguras.",
-        "Implementé controles de seguridad basados en OWASP Top 10 para fortalecer la protección de aplicaciones y APIs.",
-        "Colaboré con equipos de Frontend y DevOps en despliegues continuos sobre infraestructura AWS."
+        "Designed, developed, and maintained RESTful APIs using Python, Django, and Django REST Framework.",
+        "Improved software reliability by implementing unit and integration tests, reducing production issues and increasing code quality.",
+        "Optimized SQL queries and backend workflows to improve the performance of business-critical modules.",
+        "Designed and integrated WhatsApp-based notification services to automate reminders and transactional communications.",
+        "Built asynchronous processing pipelines using Celery, AWS SQS, and AWS services for email delivery and background event processing.",
+        "Integrated the Izipay payment gateway, enabling secure online payment processing.",
+        "Strengthened application security by implementing controls aligned with the OWASP Top 10 security guidelines.",
+        "Collaborated with Frontend and DevOps teams to deliver continuous deployments and cloud-native solutions on AWS."
       ],
       "stack": [
         "Python",
@@ -60,20 +60,20 @@
     {
       "company": "Clarity Wave",
       "position": "Full Stack Developer",
-      "location": "Remoto",
+      "location": "Remote",
       "startDate": "2021-10",
       "endDate": "2025-06",
-      "description": "Diseñé y desarrollé nuevas funcionalidades para una plataforma SaaS de gestión de talento y clima organizacional utilizada por empresas de Latinoamérica y Estados Unidos.",
+      "description": "Designed and delivered new features for a SaaS talent management and employee engagement platform serving organizations across the United States and Latin America.",
       "responsibilities": [
-        "Diseñé e implementé funcionalidades basadas en OpenAI para analizar resultados de encuestas y generar recomendaciones automáticas mediante inteligencia artificial.",
-        "Implementé estrategias de caché con Redis para reducir la carga de base de datos y mejorar el rendimiento de la plataforma.",
-        "Desarrollé APIs REST utilizando Django REST Framework para integraciones internas y aplicaciones web.",
-        "Optimicé el rendimiento de tablas con miles de registros mediante procesamiento server-side, paginación y optimización de consultas.",
-        "Optimicé consultas complejas en PostgreSQL utilizando índices, agregaciones, subconsultas y estrategias de prefetching.",
-        "Diseñé y mantuve procesos de exportación masiva de datos y generación de reportes para organizaciones con grandes volúmenes de información.",
-        "Implementé pruebas unitarias y automatizadas para incrementar la cobertura del código y reducir regresiones.",
-        "Participé en el diseño y mantenimiento de procesos asíncronos utilizando Celery para exportaciones, cálculos estadísticos y tareas programadas.",
-        "Colaboré en despliegues y monitoreo de aplicaciones sobre AWS utilizando Docker y herramientas de observabilidad."
+        "Designed and implemented AI-powered features using the OpenAI API to analyze employee survey results and generate automated recommendations.",
+        "Improved platform scalability by implementing Redis caching strategies, reducing database load and improving response times.",
+        "Developed REST APIs using Django REST Framework to support internal services and web applications.",
+        "Optimized large datasets through server-side processing, efficient pagination, and query optimization.",
+        "Enhanced PostgreSQL performance by tuning complex queries with indexes, aggregations, subqueries, and optimized data fetching strategies.",
+        "Designed and maintained enterprise-grade data export services and reporting tools for large organizations.",
+        "Improved software quality by implementing automated testing and expanding unit test coverage.",
+        "Built and maintained asynchronous processing workflows with Celery for scheduled jobs, statistical calculations, and large-scale data exports.",
+        "Collaborated on AWS deployments, Docker-based environments, and application monitoring to improve reliability and operational efficiency."
       ],
       "stack": [
         "Python",
@@ -95,14 +95,14 @@
       "location": "Perú",
       "startDate": "2015-12",
       "endDate": "2021-09",
-      "description": "Desarrollé aplicaciones web, soluciones ERP y plataformas de comercio electrónico para optimizar procesos administrativos, contables y operativos.",
+      "description": "Developed business applications, ERP solutions, and e-commerce platforms to streamline administrative, financial, and operational processes.",
       "responsibilities": [
-        "Desarrollé y mantuve aplicaciones web para la gestión de procesos administrativos, contables y operativos.",
-        "Implementé módulos personalizados en Odoo para automatizar presupuestos, facturación, inventario y contabilidad.",
-        "Diseñé y desarrollé una plataforma de comercio electrónico integrada con los sistemas internos de la empresa.",
-        "Participé en la integración de distintos sistemas para centralizar la información y mejorar la trazabilidad de los procesos.",
-        "Desarrollé herramientas internas para la planificación y seguimiento de actividades operativas.",
-        "Colaboré en el análisis de requerimientos, diseño de soluciones y soporte continuo a usuarios finales."
+        "Designed and maintained web applications supporting administrative, accounting, and operational workflows.",
+        "Developed custom Odoo modules for budgeting, invoicing, inventory management, and accounting automation.",
+        "Designed and implemented an integrated e-commerce platform connected with the company's internal systems.",
+        "Integrated multiple business systems to centralize information and improve operational traceability.",
+        "Developed internal tools for production planning, workflow management, and operational tracking.",
+        "Worked closely with stakeholders to analyze business requirements and deliver scalable software solutions."
       ],
       "stack": [
         "Python",
@@ -115,19 +115,19 @@
       ]
     },
     {
-      "company": "vwplanner",
+      "company": "VWPlanner",
       "position": "Full Stack Developer",
       "location": "Perú",
       "startDate": "2014-08",
       "endDate": "2015-11",
-      "description": "Participé en el desarrollo de una plataforma web para la gestión de proyectos y metrados en el sector construcción.",
+      "description": "Contributed to the development of a construction management platform used for project planning, quantity surveying, and cost estimation.",
       "responsibilities": [
-        "Participé en el desarrollo de una plataforma web orientada al sector construcción para la gestión de proyectos y metrados.",
-        "Diseñé e implementé módulos para el cálculo y administración de metrados de edificaciones.",
-        "Desarrollé reportes y herramientas de consulta para facilitar el seguimiento y control de proyectos.",
-        "Optimicé consultas a base de datos y mecanismos de almacenamiento temporal para mejorar el rendimiento de la aplicación.",
-        "Colaboré en tareas de despliegue, mantenimiento y soporte de la plataforma en producción.",
-        "Trabajé junto a usuarios del sector construcción para transformar requerimientos funcionales en soluciones tecnológicas."
+        "Developed new features for a web platform supporting construction project management and quantity surveying.",
+        "Designed modules for building quantity calculations and project estimation workflows.",
+        "Built reporting and analytics tools to improve project monitoring and decision-making.",
+        "Improved application performance by optimizing database queries and caching mechanisms.",
+        "Supported production deployments, maintenance, and ongoing platform enhancements.",
+        "Collaborated directly with construction industry professionals to translate business requirements into scalable software solutions."
       ],
       "stack": [
         "Python",

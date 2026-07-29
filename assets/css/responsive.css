@@ -11,7 +11,7 @@
 
   /* Adjust section padding */
   .section {
-    padding: var(--spacing-16) 0;
+    padding: var(--spacing-10) 0;
   }
 
   /* Adjust font sizes */

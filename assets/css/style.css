@@ -48,6 +48,7 @@ h6 { font-size: var(--font-size-lg); }
 
 p {
   margin-bottom: var(--spacing-4);
+  text-align: justify;
 }
 
 a {
@@ -909,11 +910,27 @@ header {
 
 .experience-content {
   width: calc(50% - var(--spacing-6));
-  padding: var(--spacing-4);
+  padding: var(--spacing-2);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-2);
-  align-items: center; /* Center all content horizontally */
+  align-items: flex-start; /* Align items to the start (left) */
+}
+
+/* Reduce heading size and margin inside experience content */
+.experience-content h4 {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  margin-top: var(--spacing-2);
+  margin-bottom: var(--spacing-1);
+  color: var(--color-text);
+}
+
+/* Reduce bottom margin for specific elements */
+.experience-content .experience-description,
+.experience-content .experience-responsibilities,
+.experience-content .experience-stack {
+  margin-bottom: var(--spacing-1);
 }
 
 /* Position content based on item order for alternating layout */
@@ -937,10 +954,12 @@ header {
 }
 
 .experience-meta {
+  width: 100%;
+  text-align: left;
   display: flex;
   flex-wrap: wrap;
   gap: var(--spacing-2);
-  margin-block: var(--spacing-2);
+  margin-block: 0 var(--spacing-2);
 }
 
 .experience-period {
@@ -951,6 +970,7 @@ header {
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
   white-space: nowrap;
+  text-align: left;
 }
 
 .experience-location {
@@ -959,6 +979,15 @@ header {
   display: inline-flex;
   align-items: center;
   gap: var(--spacing-05);
+  text-align: left;
+}
+
+.education-period {
+  text-align: left;
+}
+
+.certification-date {
+  text-align: left;
 }
 
 .experience-description {
@@ -1012,6 +1041,94 @@ header {
 .experience-stack .skill-badge:hover {
   background: var(--color-primary);
   color: white;
+}
+
+/* Compact experience header styles */
+.experience-header {
+  margin-bottom: var(--spacing-1);
+  align-items: flex-start;
+}
+
+.experience-header-main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-1);
+  align-items: flex-start;
+  flex: 1 1 100%;
+}
+
+.experience-header-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-1);
+  align-items: flex-start;
+  flex: 1 1 100%;
+}
+
+.experience-company {
+  margin: 0;
+  font-size: var(--font-size-xl);
+  flex-shrink: 0;
+}
+
+.experience-position {
+  margin: 0;
+  font-size: var(--font-size-lg);
+  color: var(--color-primary);
+  flex-shrink: 0;
+  margin-top: 0;
+  text-align: left;
+}
+
+.experience-period {
+  background-color: var(--color-primary);
+  color: white;
+  padding: var(--spacing-05) var(--spacing-1);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 0;
+}
+
+.experience-location {
+  font-size: var(--font-size-sm);
+  color: var(--color-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-05);
+  margin-top: 0;
+  flex-shrink: 0;
+}
+
+/* Responsive adjustments for experience header */
+@media (max-width: 767px) {
+  .experience-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .experience-header-main,
+  .experience-header-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .experience-company {
+    font-size: var(--font-size-lg);
+  }
+
+  .experience-position {
+    font-size: var(--font-size-base);
+  }
+
+  .experience-period,
+  .experience-location {
+    align-self: flex-start;
+    margin-top: var(--spacing-05);
+  }
 }
 
 /* Mobile adjustments */
@@ -1786,5 +1903,8 @@ header {
   .focus-areas-grid,
   .highlights-grid {
     grid-template-columns: 1fr;
+  }
+  p {
+    text-align: left;
   }
 }

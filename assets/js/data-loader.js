@@ -291,8 +291,11 @@ class DataLoader {
             <p class="experience-period">${startFormatted} – ${endFormatted}</p>
             ${exp.location ? `<p class="experience-location">${exp.location}</p>` : ''}
           </div>
+          <h4>Description</h4>
           ${exp.description ? `<p class="experience-description">${exp.description}</p>` : ''}
+          <h4>Key Contributions</h4>
           ${responsibilitiesList}
+          <h4>Tech Stacks</h4>
           ${stackBadges}
         </div>
       `;
