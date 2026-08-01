@@ -112,9 +112,9 @@
                         REST APIs, and cloud-native solutions for companies across Latin America, USA, and Spain.
                     </p>
                     <div class="hero-actions">
-                        <a href="assets/files/christian-horna-cv.pdf" download class="btn btn-primary">Download Resume</a>
-                        <a href="https://github.com/chorna" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
-                        <a href="https://linkedin.com/in/christianhorna" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
+                        <a href="assets/files/christian-horna-cv.pdf" download class="btn btn-primary" onclick="trackEvent('resume_download')">Download Resume</a>
+                        <a href="https://github.com/chorna" target="_blank" rel="noopener" class="btn btn-outline" onclick="trackEvent('github_click')">GitHub</a>
+                        <a href="https://linkedin.com/in/christianhorna" target="_blank" rel="noopener" class="btn btn-outline" onclick="trackEvent('linkedin_click')">LinkedIn</a>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -148,7 +148,7 @@
                         My expertise spans frontend and backend development, with a focus on modern web technologies, cloud infrastructure,
                         and user-centered design.
                     </p>
-                    <a href="assets/files/christian-horna-cv.pdf" download class="btn btn-primary">Download Resume</a>
+                    <a href="assets/files/christian-horna-cv.pdf" download class="btn btn-primary" onclick="trackEvent('linkedin_click')">Download Resume</a>
                 </div>
                 <div class="about-image">
                     <img src="assets/images/photo.png" alt="Christian Horna">
@@ -239,19 +239,19 @@
                             </span>
                             <span class="contact-link">
                                 <span class="contact-icon"><i class="fab fa-whatsapp"></i></span>
-                                <a href="https://wa.me/+51923421779" target="_blank" rel="noopener">
+                                <a href="https://wa.me/+51923421779" target="_blank" rel="noopener" onclick="trackEvent('whatsapp_click')">
                                     <span>WhatsApp</span>
                                 </a>
                             </span>
                             <span class="contact-link">
                                 <span class="contact-icon"><i class="fab fa-linkedin"></i></span>
-                                <a href="https://linkedin.com/in/christianhorna" target="_blank" rel="noopener">
+                                <a href="https://linkedin.com/in/christianhorna" target="_blank" rel="noopener" onclick="trackEvent('linkedin_click')">
                                     <span>LinkedIn</span>
                                 </a>
                             </span>
                             <span class="contact-link">
                                 <span class="contact-icon"><i class="fab fa-github"></i></span>
-                                <a href="https://github.com/chorna" target="_blank" rel="noopener">
+                                <a href="https://github.com/chorna" target="_blank" rel="noopener" onclick="trackEvent('github_click')">
                                     <span>GitHub</span>
                                 </a>
                             </span>
@@ -274,13 +274,13 @@
                 </div>
                 
                 <div class="footer-social">
-                    <a href="https://linkedin.com/in/christianhorna" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <a href="https://linkedin.com/in/christianhorna" target="_blank" rel="noopener" onclick="trackEvent('linkedin_click')" aria-label="LinkedIn">
                         <i class="fab fa-linkedin"></i>
                     </a>
-                    <a href="https://github.com/chorna" target="_blank" rel="noopener" aria-label="GitHub">
+                    <a href="https://github.com/chorna" target="_blank" rel="noopener" onclick="trackEvent('github_click')" aria-label="GitHub">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="https://twitter.com/ChristianHorna" target="_blank" rel="noopener" aria-label="Twitter">
+                    <a href="https://twitter.com/ChristianHorna" target="_blank" rel="noopener" onclick="trackEvent('twitter_click')" aria-label="Twitter">
                         <i class="fab fa-twitter"></i>
                     </a>
                 </div>
@@ -303,6 +303,15 @@
         gtag('js', new Date());
 
         gtag('config', 'G-LGRRPK9LRD');
+    </script>
+
+    <!-- Event Tracking Script -->
+    <script>
+        function trackEvent(eventName) {
+            gtag('event', eventName, {
+                event_category: 'engagement'
+            });
+        }
     </script>
 </body>
 </html>
