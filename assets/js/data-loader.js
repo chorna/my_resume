@@ -414,7 +414,15 @@ class DataLoader {
 
     grid.innerHTML = '';
 
-    this.profileData.certifications.forEach(cert => {
+    // Remove any existing button container to avoid duplicates
+    const existingButtonContainer = grid.parentNode.querySelector('.certifications-button-container');
+    if (existingButtonContainer) {
+      existingButtonContainer.remove();
+    }
+
+    // We'll create all cards first
+    const allCertificates = this.profileData.certifications;
+    const allCards = allCertificates.map(cert => {
       const card = document.createElement('div');
       card.className = 'certification-card';
 
@@ -429,8 +437,49 @@ class DataLoader {
         ${cert.url ? `<a href="${cert.url}" target="_blank" rel="noopener" class="certification-url">Verify Credential</a>` : ''}
       `;
 
-      grid.appendChild(card);
+      return card;
     });
+
+    // If there are 4 or fewer certifications, just show all and no button
+    if (allCards.length <= 4) {
+      allCards.forEach(card => grid.appendChild(card));
+      return;
+    }
+
+    // Show first 4 cards
+    const visibleCards = allCards.slice(0, 4);
+    const hiddenCards = allCards.slice(4);
+
+    // Add all cards to the grid first
+    allCards.forEach(card => grid.appendChild(card));
+    // Initially hide the extra cards
+    hiddenCards.forEach(card => card.style.display = 'none');
+
+    // Create a container for the button
+    const buttonContainer = document.createElement('div');
+    buttonContainer.className = 'certifications-button-container text-center mt-3';
+
+    const toggleButton = document.createElement('button');
+    toggleButton.className = 'btn btn-outline';
+    toggleButton.textContent = 'Show more';
+    toggleButton.setAttribute('aria-expanded', 'false');
+    toggleButton.addEventListener('click', () => {
+      const isShowingAll = toggleButton.getAttribute('aria-expanded') === 'true';
+      if (isShowingAll) {
+        // Hide the extra cards
+        hiddenCards.forEach(card => card.style.display = 'none');
+        toggleButton.textContent = 'Show more';
+        toggleButton.setAttribute('aria-expanded', 'false');
+      } else {
+        // Show the extra cards
+        hiddenCards.forEach(card => card.style.display = '');
+        toggleButton.textContent = 'Show less';
+        toggleButton.setAttribute('aria-expanded', 'true');
+      }
+    });
+
+    buttonContainer.appendChild(toggleButton);
+    grid.parentNode.insertBefore(buttonContainer, grid.nextSibling);
   }
 
   /**
