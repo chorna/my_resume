@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://christian.dev.github.io/cv/sitemap.xml
+Sitemap: https://christianhorna.dev/sitemap.xml
