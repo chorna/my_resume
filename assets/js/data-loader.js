@@ -461,14 +461,15 @@ class DataLoader {
 
     const toggleButton = document.createElement('button');
     toggleButton.className = 'btn btn-outline';
-    toggleButton.textContent = 'Show more';
+    // Set initial text with count of hidden items
+    toggleButton.textContent = `Show ${hiddenCards.length} more`;
     toggleButton.setAttribute('aria-expanded', 'false');
     toggleButton.addEventListener('click', () => {
       const isShowingAll = toggleButton.getAttribute('aria-expanded') === 'true';
       if (isShowingAll) {
         // Hide the extra cards
         hiddenCards.forEach(card => card.style.display = 'none');
-        toggleButton.textContent = 'Show more';
+        toggleButton.textContent = `Show ${hiddenCards.length} more`;
         toggleButton.setAttribute('aria-expanded', 'false');
       } else {
         // Show the extra cards
