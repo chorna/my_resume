@@ -319,7 +319,25 @@
     }
   ],
 
-  "projects": [],
+  "projects": [
+    {
+      "name": "Talent Intelligence",
+      "description": "AI-powered talent discovery platform for searching, evaluating, and managing technical profiles.",
+      "technologies": [
+        "Python",
+        "Django",
+        "Django REST Framework",
+        "PostgreSQL",
+        "pgvector",
+        "Docker",
+        "AI Agents"
+      ],
+      "category": "AI / Backend",
+      "status": "In Progress",
+      "githubUrl": "https://github.com/chorna/talent-intelligence",
+      "featured": true
+    }
+  ],
 
   "interests": [
     "Artificial Intelligence",

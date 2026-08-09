@@ -112,7 +112,7 @@ class DataLoader {
           "technologies": ["JavaScript", "React", "Node.js"],
           "githubUrl": "https://github.com/yourusername/project",
           "liveUrl": "https://yourproject.com",
-          "image": "assets/images/project-placeholder.jpg",
+          "image": "assets/images/project-placeholder.png",
           "highlights": [
             "Highlight 1",
             "Highlight 2"
@@ -373,7 +373,15 @@ class DataLoader {
 
     grid.innerHTML = '';
 
-    this.profileData.projects.forEach(project => {
+    // Remove any existing button container to avoid duplicates
+    const existingButtonContainer = grid.parentNode.querySelector('.projects-button-container');
+    if (existingButtonContainer) {
+      existingButtonContainer.remove();
+    }
+
+    // We'll create all cards first
+    const allProjects = this.profileData.projects;
+    const allCards = allProjects.map(project => {
       const card = document.createElement('div');
       card.className = 'project-card';
 
@@ -387,7 +395,7 @@ class DataLoader {
 
       card.innerHTML = `
         <div class="project-image">
-          <img src="${project.image || 'assets/images/project-placeholder.jpg'}" alt="${project.name}">
+          <img src="${project.image || 'assets/images/project-placeholder.png'}" alt="${project.name}">
         </div>
         <div class="project-content">
           <h3 class="project-title">${project.name}</h3>
@@ -401,8 +409,50 @@ class DataLoader {
         </div>
       `;
 
-      grid.appendChild(card);
+      return card;
     });
+
+    // If there are 4 or fewer projects, just show all and no button
+    if (allCards.length <= 4) {
+      allCards.forEach(card => grid.appendChild(card));
+      return;
+    }
+
+    // Show first 4 cards
+    const visibleCards = allCards.slice(0, 4);
+    const hiddenCards = allCards.slice(4);
+
+    // Add all cards to the grid first
+    allCards.forEach(card => grid.appendChild(card));
+    // Initially hide the extra cards
+    hiddenCards.forEach(card => card.style.display = 'none');
+
+    // Create a container for the button
+    const buttonContainer = document.createElement('div');
+    buttonContainer.className = 'projects-button-container text-center mt-3';
+
+    const toggleButton = document.createElement('button');
+    toggleButton.className = 'btn btn-outline';
+    // Set initial text with count of hidden items
+    toggleButton.textContent = `Show ${hiddenCards.length} more`;
+    toggleButton.setAttribute('aria-expanded', 'false');
+    toggleButton.addEventListener('click', () => {
+      const isShowingAll = toggleButton.getAttribute('aria-expanded') === 'true';
+      if (isShowingAll) {
+        // Hide the extra cards
+        hiddenCards.forEach(card => card.style.display = 'none');
+        toggleButton.textContent = `Show ${hiddenCards.length} more`;
+        toggleButton.setAttribute('aria-expanded', 'false');
+      } else {
+        // Show the extra cards
+        hiddenCards.forEach(card => card.style.display = '');
+        toggleButton.textContent = 'Show less';
+        toggleButton.setAttribute('aria-expanded', 'true');
+      }
+    });
+
+    buttonContainer.appendChild(toggleButton);
+    grid.parentNode.insertBefore(buttonContainer, grid.nextSibling);
   }
 
   /**
