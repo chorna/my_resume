@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christian Horna - Senior Backend Engineer</title>
+    <meta name="description" content="Senior Python Backend Developer specializing in Django, AWS, and cloud-native applications.">
+    <meta name="author" content="Christian Horna">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="robots" content="index,follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://christianhorna.dev/">
+    <meta property="og:title" content="Christian Horna - Senior Backend Engineer">
+    <meta property="og:description" content="Senior Python Backend Developer with 11+ years of experience building scalable web applications and APIs.">
+    <meta property="og:image" content="https://christianhorna.dev/assets/images/photo.png">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Christian Horna">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://christianhorna.dev/">
+    <meta property="twitter:title" content="Christian Horna | Senior Backend Engineer | Python, Django & AWS">
+    <meta property="twitter:description" content="Senior Backend Engineer with 11+ years of experience building scalable APIs using Python, Django, AWS, Redis, Celery and Distributed Systems.">
+    <meta property="twitter:image" content="assets/images/photo.png">
+    <meta name="twitter:creator" content="@ChristianHorna">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"Person",
+        "name":"Christian Horna",
+        "url":"https://christianhorna.dev/",
+        "image":"https://christianhorna.dev/assets/images/photo.png",
+        "jobTitle":"Senior Backend Engineer",
+        "worksFor":{
+            "@type":"Organization",
+            "name":"QDS"
+        },
+        "sameAs":[
+            "https://github.com/chorna",
+            "https://linkedin.com/in/christianhorna"
+        ],
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://christianhorna.dev/"
+        }
+    }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%233b82f6'/%3E%3Ctext x='50' y='55' font-size='40' text-anchor='middle' fill='white' font-weight='bold'%3E👨‍💻%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <link rel="canonical" href="https://christianhorna.dev/">
+</head>
+<body>
+    <!-- Page Loader -->
+    <div id="page-loader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar container">
+            <div class="logo">
+                <span class="logo-icon">👨‍💻</span>
+                <span>Christian Horna</span>
+            </div>
+            <div class="navbar-content">
+                <button class="mobile-menu-btn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="nav-menu">
+                    <a href="#hero" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#experience" class="nav-link">Experience</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#education" class="nav-link">Education</a>
+                    <a href="#certifications" class="nav-link">Certifications</a>
+                    <a href="#languages" class="nav-link">Languages</a>
+                    <a href="#tech-radar" class="nav-link">Tech Radar</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+            <label class="theme-toggle-switch" aria-label="Toggle dark/light mode">
+                <input type="checkbox" class="theme-toggle-checkbox">
+                <span class="slider"></span>
+            </label>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Christian Horna</h1>
+                    <p class="hero-tagline">Senior Backend Engineer | Python & Django Specialist</p>
+                    <p class="hero-description">
+                        Senior Python Backend Developer with 11+ years of experience building scalable web applications,
+                        REST APIs, and cloud-native solutions for companies across Latin America, USA, and Spain.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="assets/files/christian-horna-cv.pdf" download class="btn btn-primary" onclick="trackEvent('resume_download')">Download Resume</a>
+                        <a href="https://github.com/chorna" target="_blank" rel="noopener" class="btn btn-outline" onclick="trackEvent('github_click')">GitHub</a>
+                        <a href="https://linkedin.com/in/christianhorna" target="_blank" rel="noopener" class="btn btn-outline" onclick="trackEvent('linkedin_click')">LinkedIn</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="assets/images/photo.png" alt="Christian Horna">
+                </div>
+            </div>
+            <div class="scroll-indicator" aria-label="Scroll down">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Developer Dashboard Section -->
+    <section id="developer-dashboard" class="section">
+        <div class="container">
+            <h2 class="section-title">Developer Dashboard</h2>
+            <div class="dashboard-container">
+                <!-- Dashboard content will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="about-description">
+                        I'm a dedicated Software Engineer with a passion for creating elegant, efficient, and scalable software solutions.
+                        My expertise spans frontend and backend development, with a focus on modern web technologies, cloud infrastructure,
+                        and user-centered design.
+                    </p>
+                    <a href="assets/files/christian-horna-cv.pdf" download class="btn btn-primary" onclick="trackEvent('linkedin_click')">Download Resume</a>
+                </div>
+                <div class="about-image">
+                    <img src="assets/images/photo.png" alt="Christian Horna">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="experience-timeline">
+                <!-- Experience items will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Project cards will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-grid">
+                <!-- Education cards will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <div class="certifications-grid">
+                <!-- Certification cards will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages Section -->
+    <section id="languages" class="section">
+        <div class="container">
+            <h2 class="section-title">Languages</h2>
+            <div class="languages-list">
+                <!-- Language items will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Radar Section -->
+    <section id="tech-radar" class="section">
+        <div class="container">
+            <h2 class="section-title">Tech Radar</h2>
+            <div class="radar-container">
+                <!-- Radar categories will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="section-title">Let's Build Something Great Together</h2>
+                <p class="contact-description">
+                    I'm currently open for new opportunities, freelance projects, and collaborations.
+                    Feel free to reach out through any of the channels below.
+                </p>
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <h3 class="contact-title">Get in Touch</h3>
+                        <p class="contact-description">Have a project in mind? Let's connect!</p>
+                        <div class="contact-methods">
+                            <span class="contact-link">
+                                <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                                <a href="mailto:christian1020@gmail.com">
+                                    <span>christian1020@gmail.com</span>
+                                </a>
+                            </span>
+                            <span class="contact-link">
+                                <span class="contact-icon"><i class="fab fa-whatsapp"></i></span>
+                                <a href="https://wa.me/+51923421779" target="_blank" rel="noopener" onclick="trackEvent('whatsapp_click')">
+                                    <span>WhatsApp</span>
+                                </a>
+                            </span>
+                            <span class="contact-link">
+                                <span class="contact-icon"><i class="fab fa-linkedin"></i></span>
+                                <a href="https://linkedin.com/in/christianhorna" target="_blank" rel="noopener" onclick="trackEvent('linkedin_click')">
+                                    <span>LinkedIn</span>
+                                </a>
+                            </span>
+                            <span class="contact-link">
+                                <span class="contact-icon"><i class="fab fa-github"></i></span>
+                                <a href="https://github.com/chorna" target="_blank" rel="noopener" onclick="trackEvent('github_click')">
+                                    <span>GitHub</span>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">👨‍💻</span>
+                    <span>Christian Horna</span>
+                    <p class="footer-tagline">Senior Backend Engineer | Python & Django Specialist</p>
+                    <div id="current-year" class="footer-year"></div>
+                </div>
+                
+                <div class="footer-social">
+                    <a href="https://linkedin.com/in/christianhorna" target="_blank" rel="noopener" onclick="trackEvent('linkedin_click')" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/chorna" target="_blank" rel="noopener" onclick="trackEvent('github_click')" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://twitter.com/ChristianHorna" target="_blank" rel="noopener" onclick="trackEvent('twitter_click')" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="assets/js/data-loader.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/app.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LGRRPK9LRD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-LGRRPK9LRD');
+    </script>
+
+    <!-- Event Tracking Script -->
+    <script>
+        function trackEvent(eventName) {
+            gtag('event', eventName, {
+                event_category: 'engagement'
+            });
+        }
+    </script>
+</body>
+</html>
